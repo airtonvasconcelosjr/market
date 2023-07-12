@@ -1,0 +1,10 @@
+.produto-lista {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .produto {
+    width: 25%; /* Define a largura das colunas (4 colunas por linha) */
+    padding: 10px;
+  }
+  
