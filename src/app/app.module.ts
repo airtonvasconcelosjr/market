@@ -6,16 +6,26 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { RemoveTagsPipe } from './remove-tags.pipe';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RemoveTagsPipe
+    RemoveTagsPipe,
+    HeaderComponent,
+    FooterComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SlickCarouselModule,
+    FontAwesomeModule,
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

@@ -30,6 +30,28 @@ export interface Banner {
   }
   
   
+  export interface Promo {
+    id: string;
+    title: string;
+    description: string;
+    name:string;
+    min_price_valid: number;
+    price: number;
+    images: string;
+    imagem: string;
+    items: {
+      id: string;
+      price: number;
+      photo: string;
+      image: string;
+      images: string;
+      name: string;
+      min_price_valid: number; // Adicione esta linha para o min_price_valid
+      // Outras propriedades do item, se houver
+    }[];
+    // Outras propriedades do produto, se houver
+  }
+  
 
   export interface Categoria {
     id: string;

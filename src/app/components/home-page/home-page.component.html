@@ -1,0 +1,57 @@
+
+<!-- Banner
+<div>
+  <h2>Banners:</h2>
+  <div *ngFor="let banner of banners">
+    <h3>{{ banner.title }}</h3>
+    <img [src]="'https://assets.instabuy.com.br/ib.store.banner/bnr-' + banner.image" alt=">{{ banner.title }}">
+    
+  </div>
+</div>-->
+
+<!-- Itens da promoção -->
+<div class="carousel-wrapper">
+  <fa-icon [icon]="boltIcon"></fa-icon>
+    <h2>Ofertas</h2>
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+      <div ngxSlickItem *ngFor="let item of promo" class="slide">
+        <h3>{{ item.name }}</h3>
+        <!--<p>{{ item.description | removeTags }}</p> -->
+        <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
+        <p>Preço: R$ {{ item.min_price_valid }}</p>
+        <!-- ... Outros detalhes do item da promoção -->
+      </div>
+    </ngx-slick-carousel>
+    <div class="carousel-buttons">
+      <!-- Add your custom navigation buttons here -->
+      <button class="carousel-button prev-button" (click)="slickModal.slickPrev()"><</button>
+      <button class="carousel-button next-button" (click)="slickModal.slickNext()">></button>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+<!-- Lista de categorias -->
+<div>
+  <h2>Categorias:</h2>
+  <div *ngFor="let categoria of categorias">
+    <div class="categoria">
+      <h3>{{ categoria.title }}</h3>
+      <!-- Lista de produtos -->
+      <div class="produto-lista">
+        <div class="produto" *ngFor="let produto of categoria.items">
+          <!-- Imagem do produto -->
+          <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + produto.images[0]" alt="Produto">
+          <!-- Valor -->
+          <p>Preço: R$ {{ produto.min_price_valid }}</p>
+          <!-- Título -->
+          <h4>{{ produto.name }}</h4>
+          <!-- Descrição -->
+          <h3>{{ produto.description | removeTags }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

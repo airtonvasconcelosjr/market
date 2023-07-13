@@ -1,0 +1,52 @@
+.produto-lista {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .produto {
+    width: 25%; /* Define a largura das colunas (4 colunas por linha) */
+    padding: 10px;
+  }
+  
+  .item-lista {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    width: 25%; /* Define a largura das colunas (4 colunas por linha) */
+    padding: 10px;
+  }
+
+  .slick-slider {
+    width: 88%;
+    margin: auto;
+  }
+  
+
+  .carousel-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-button {
+    padding: 8px 16px;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  
+  .prev-button {
+    margin-right: auto;
+    margin-top: -20rem;
+    z-index: 99;
+  }
+  
+  .next-button {
+    margin-right: 15rem;
+    margin-top: -20rem;
+    z-index: 99;
+  }
