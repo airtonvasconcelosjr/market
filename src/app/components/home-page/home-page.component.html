@@ -19,6 +19,7 @@
         <!--<p>{{ item.description | removeTags }}</p> -->
         <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
         <p class="product-price">R$ {{ item.min_price_valid }}</p>
+        <p class="product-nopromo">R$ {{ item.prices[0].price }}</p>
         <h3 class="product-name">{{ item.name }}</h3>
         <!-- ... Outros detalhes do item da promoção -->
       </div>
@@ -43,7 +44,7 @@
         <div ngxSlickItem *ngFor="let item of categoria.items" class="slide">
          
           <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
-          <p>R$ {{ item.min_price_valid }}</p>
+          <p  class="product-price">R$ {{ item.prices[0].price }}</p>
           <h4 class="product-name">{{ item.name }}</h4>
           <!-- ... Outros detalhes do item -->
         </div>

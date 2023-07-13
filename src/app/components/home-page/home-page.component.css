@@ -35,10 +35,13 @@
   }
   
   .carousel-button {
-    padding: 8px 16px;
-    background-color: #eee;
+    padding: 10px;
+    background-color: rgb(44, 151, 44);
     border: none;
     cursor: pointer;
+    border-radius: 65%;
+    color: white;
+    font-size: 15px;
   }
   
 
@@ -65,13 +68,40 @@
 
   .card-item{
     text-align: center;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
   
-  .card-item img {
-    margin-bottom: 5px;
-    margin: 0 auto;
-    display: block;
-  }
+    .card-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .product-price,
+    .product-nopromo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .product-price {
+      color: rgb(237, 77, 104);
+      text-align: left;
+      font-size: 25px;
+      font-weight: bold;
+      margin-left: 1rem;
+      margin-bottom: 0;
+    }
+    
+    .product-nopromo {
+      color: rgb(66, 66, 66);
+      font-size: 16px;
+      text-align: left;
+      margin-left: 1rem;
+      margin-top: 0;
+    }
+    
 
   .product-name {
     width: 80%;
@@ -80,9 +110,15 @@
     text-align: left;
     margin-left: 1rem;
     font-weight: 200;
+    margin-top: 0;
 
   }
   
   .product-price {
-   color: rgb(233, 123, 141);
+   color: rgb(237, 77, 104);
+   text-align: left;
+   font-size: 25px;
+   font-weight: bold;
+   margin-left: 1rem;
+   margin-bottom: 0;
   }
