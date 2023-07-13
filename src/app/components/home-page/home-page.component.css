@@ -25,9 +25,13 @@
   
 
   .carousel-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
   }
   
   .carousel-button {
@@ -37,16 +41,48 @@
     cursor: pointer;
   }
   
-  
-  
-  .prev-button {
-    margin-right: auto;
-    margin-top: -20rem;
-    z-index: 99;
+
+  .categoria-card {
+    background-color: beige;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
   }
   
-  .next-button {
-    margin-right: 15rem;
-    margin-top: -20rem;
-    z-index: 99;
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+  }
+
+  .carousel-wrapper{
+    background-color: beige;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .card-item{
+    text-align: center;
+  }
+  
+  .card-item img {
+    margin-bottom: 5px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .product-name {
+    width: 80%;
+    color: rgb(66, 66, 66);
+    font-size: 16px;
+    text-align: left;
+    margin-left: 1rem;
+    font-weight: 200;
+
+  }
+  
+  .product-price {
+   color: rgb(233, 123, 141);
   }
