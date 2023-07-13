@@ -13,12 +13,16 @@ export interface Banner {
     description: string;
     name:string;
     min_price_valid: number;
-    price: number;
     images: string;
     imagem: string;
+    prices: {
+      price: number;
+    }[];
     items: {
       id: string;
-      price: number;
+      prices:{
+        price: number;
+      }
       photo: string;
       image: string;
       images: string;
@@ -36,12 +40,16 @@ export interface Banner {
     description: string;
     name:string;
     min_price_valid: number;
-    price: number;
     images: string;
     imagem: string;
+    prices: {
+      price: number;
+    }[];
     items: {
       id: string;
-      price: number;
+      prices: {
+        price: number;
+      }[];
       photo: string;
       image: string;
       images: string;
@@ -51,6 +59,7 @@ export interface Banner {
     }[];
     // Outras propriedades do produto, se houver
   }
+  
   
 
   export interface Categoria {

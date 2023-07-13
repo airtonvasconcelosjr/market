@@ -28,6 +28,7 @@ export class HomePageComponent implements OnInit {
   produtos!: Produto[];
   promo!: Promo[];
   boltIcon = faBolt;
+  
 
 
   constructor(private apiService: ApiService) {}
@@ -40,9 +41,15 @@ export class HomePageComponent implements OnInit {
       this.banners = response.data.banners;
       this.categorias = response.data.collection_items;
       this.promo = response.data.promo;
+      this.promo.forEach(item => {
+        const price = item.prices[0]?.price; // Acessar o preço dentro de promo
+        console.log(price);
+      });
       console.log(this.promo)
       this.categorias.forEach(categoria => {
         categoria.items.forEach(item => {
+          const price = item.prices[0]?.price; 
+          ;
         });
       });
     });
