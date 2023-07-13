@@ -1,3 +1,11 @@
+.offer-container {
+  display: flex;
+  align-items: center;
+}
+
+.offer-icon {
+  margin-right: 5px; /* Adicione margem à direita para separar o ícone do texto */
+}
 .produto-lista {
     display: flex;
     flex-wrap: wrap;
@@ -73,35 +81,11 @@
     align-items: center;
     }
   
-    .card-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .product-price,
-    .product-nopromo {
-      display: flex;
-      align-items: center;
-    }
-    
-    .product-price {
-      color: rgb(237, 77, 104);
-      text-align: left;
-      font-size: 25px;
-      font-weight: bold;
-      margin-left: 1rem;
-      margin-bottom: 0;
-    }
-    
-    .product-nopromo {
-      color: rgb(66, 66, 66);
-      font-size: 16px;
-      text-align: left;
-      margin-left: 1rem;
-      margin-top: 0;
-    }
-    
+  .card-item img {
+    margin-bottom: 5px;
+    margin: 0 auto;
+    display: block;
+  }
 
   .product-name {
     width: 80%;
@@ -111,14 +95,31 @@
     margin-left: 1rem;
     font-weight: 200;
     margin-top: 0;
-
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* Define o limite de 2 linhas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .product-prices {
+    display: flex;
+    align-items: center;
   }
   
   .product-price {
-   color: rgb(237, 77, 104);
-   text-align: left;
-   font-size: 25px;
-   font-weight: bold;
-   margin-left: 1rem;
-   margin-bottom: 0;
+    color: rgb(237, 77, 104);
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 1rem;
+  }
+  
+  .product-nopromo {
+    color: rgb(66, 66, 66);
+    font-size: 14px;
+    text-align: left;
+    margin-left: 0.4rem;
+    font-weight: bold;
+    text-decoration:line-through;
   }

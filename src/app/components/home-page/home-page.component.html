@@ -12,14 +12,20 @@
 <!-- Itens da promoção -->
 <div class="carousel-wrapper">
   <div class="card">
-    <fa-icon [icon]="boltIcon"></fa-icon>
-    <h2>Ofertas</h2>
+    <div class="offer-container">
+      <span class="offer-icon">
+        <fa-icon [icon]="boltIcon"></fa-icon>
+      </span>
+      <span class="offer-text">Ofertas</span>
+    </div>
     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
       <div ngxSlickItem *ngFor="let item of promo" class="slide card-item">
         <!--<p>{{ item.description | removeTags }}</p> -->
         <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
-        <p class="product-price">R$ {{ item.min_price_valid }}</p>
-        <p class="product-nopromo">R$ {{ item.prices[0].price }}</p>
+        <div class="product-prices">
+          <p class="product-price">R$ {{ item.min_price_valid }}</p>
+          <p class="product-nopromo">R$ {{ item.prices[0].price }}</p>
+        </div>
         <h3 class="product-name">{{ item.name }}</h3>
         <!-- ... Outros detalhes do item da promoção -->
       </div>
