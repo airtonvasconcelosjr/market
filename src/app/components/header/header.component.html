@@ -1,9 +1,67 @@
+<div class="top-bar-extra">
+  <div class="left-section">
+    <button class="location-button">
+      <fa-icon [icon]="faLocation"></fa-icon>
+    </button>
+  </div>
+  <div class="middle-section">
+    <span class="clock-icon">
+      <fa-icon [icon]="faClock"></fa-icon>
+    </span>
+    <span class="text">Texto do meio</span>
+  </div>
+  <div class="right-section">
+    <span class="text">Texto da direita</span>
+  </div>
+</div>
 <div class="header">
-    <!-- Barra no topo da tela -->
-    <div class="top-bar">
-      <!-- Input de pesquisa -->
+  <!-- Barra no topo da tela -->
+  <div class="top-bar">
+    <!-- Logo e texto -->
+    <div class="logo">
+      <!-- Coloque aqui o código para exibir sua logo -->
+      <h3 class="logo-text">Supermercado Modelo</h3>
+    </div>
+
+    <!-- Input de pesquisa -->
+    <div class="search-bar">
       <input type="text" placeholder="Buscar" class="search-input">
-      <!-- Outros elementos da barra, se houver -->
-  <fa-icon [icon]="searchIcon"></fa-icon>
+      <fa-icon [icon]="searchIcon" class="search-icon"></fa-icon>
+    </div>
+
+    <!-- Ícones -->
+    <div class="icons">
+      <fa-icon [icon]="faList" class="icon"></fa-icon>
+      <fa-icon [icon]="faUser" class="icon"></fa-icon>
+      <fa-icon [icon]="faShoppingCart" class="icon"></fa-icon>
     </div>
   </div>
+</div>
+<div class="additional-icons">
+  <div class="additional-icons-inner">
+    <a href="pagina1.html" class="icon-item">
+      <fa-icon [icon]="faHome" class="additional-icon"></fa-icon>
+      <span class="icon-text">INÍCIO</span>
+    </a>
+    <a href="pagina2.html" class="icon-item">
+      <fa-icon [icon]="faListAlt" class="additional-icon"></fa-icon>
+      <span class="icon-text">Todas as categorias</span>
+    </a>
+    <a href="pagina3.html" class="icon-item">
+      <fa-icon [icon]="faListAlt" class="additional-icon"></fa-icon>
+      <span class="icon-text">Ofertas</span>
+    </a>
+    <a href="pagina4.html" class="icon-item">
+      <fa-icon [icon]="faFire" class="additional-icon"></fa-icon>
+      <span class="icon-text">KIT CHURRASCO</span>
+    </a>
+    <a href="pagina5.html" class="icon-item">
+      <fa-icon [icon]="faFire" class="additional-icon"></fa-icon>
+      <span class="icon-text">Açougue / Aves / Peixaria </span>
+    </a>
+    <a href="pagina6.html" class="icon-item">
+      <fa-icon [icon]="faFire" class="additional-icon"></fa-icon>
+      <span class="icon-text">Frios e Laticínios</span>
+    </a>
+  </div>
+</div>
