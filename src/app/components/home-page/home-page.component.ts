@@ -1,8 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { Banner, Produto, Categoria, Promo } from '../../shared/models';
-import $ from 'jquery'; // Importe a biblioteca jQuery
-import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import { faBolt, faAngleRight, faAngleLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -25,9 +24,14 @@ interface ApiResponse {
 export class HomePageComponent implements OnInit {
   banners!: Banner[];
   categorias!: Categoria[];
+  categoriasExibidas: Categoria[] = [];
+  quantidadeCategoriasExibidas = 5;
   produtos!: Produto[];
   promo!: Promo[];
   boltIcon = faBolt;
+  faAngleRight = faAngleRight;
+  faAngleLeft = faAngleLeft;
+  faPlus = faPlus;
   
 
 
@@ -40,12 +44,11 @@ export class HomePageComponent implements OnInit {
       
       this.banners = response.data.banners;
       this.categorias = response.data.collection_items;
+      this.categoriasExibidas = this.categorias.slice(0, this.quantidadeCategoriasExibidas);
       this.promo = response.data.promo;
       this.promo.forEach(item => {
-        const price = item.prices[0]?.price; // Acessar o preço dentro de promo
-        console.log(price);
+        const price = item.prices[0]?.price;
       });
-      console.log(this.promo)
       this.categorias.forEach(categoria => {
         categoria.items.forEach(item => {
           const price = item.prices[0]?.price; 
@@ -91,7 +94,28 @@ export class HomePageComponent implements OnInit {
     ]
   };
 
-  
-  
-  
+  desktopSlideConfig = {
+    slidesToShow: 1,
+    slidesToScroll: 2,
+    arrows: false,
+    dots: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
+
+  mobileSlideConfig = {
+    slidesToShow: 1,
+    slidesToScroll: 2,
+    arrows: false,
+    dots: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
+
+  carregarMaisCategorias() {
+    this.quantidadeCategoriasExibidas += 5; 
+    this.categoriasExibidas = this.categorias.slice(0, this.quantidadeCategoriasExibidas);
+  }
 }
+  
+  

@@ -1,70 +1,121 @@
 
-<html>
-  
-  <!-- Banner
-    <div>
-  <h2>Banners:</h2>
-  <div *ngFor="let banner of banners">
-    <h3>{{ banner.title }}</h3>
-    <img [src]="'https://assets.instabuy.com.br/ib.store.banner/bnr-' + banner.image" alt=">{{ banner.title }}">
-    
-  </div>
-</div>-->
-
-<!-- Itens da promoção -->
-<div class="carousel-wrapper">
-  <div class="card">
-    <div class="offer-container">
-      <span class="offer-icon">
-        <fa-icon [icon]="boltIcon"></fa-icon>
-      </span>
-      <span class="offer-text">Ofertas</span>
-    </div>
-    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-      <div ngxSlickItem *ngFor="let item of promo" class="slide card-item">
-        <!--<p>{{ item.description | removeTags }}</p> -->
-        <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
-        <div class="product-prices">
-          <p class="product-price">R$ {{ item.min_price_valid }}</p>
-          <p class="product-nopromo">R$ {{ item.prices[0].price }}</p>
-        </div>
-        <h3 class="product-name">{{ item.name }}</h3>
-        <!-- ... Outros detalhes do item da promoção -->
+<!-- Banner-->
+<!-- Carrossel para telas mobile -->
+<div  *ngIf="banners && banners.length > 0" class="carousel-wrapper-mobile">
+  <ngx-slick-carousel class="banner-carousel-mobile" #slickModal="slick-carousel" [config]="mobileSlideConfig">
+    <div ngxSlickItem *ngFor="let banner of banners">
+      <div *ngIf="banner.is_mobile">
+        <!-- Conteúdo do carrossel para telas mobile -->
+        <img [src]="'https://assets.instabuy.com.br/ib.store.banner/bnr-' + banner.image" alt="{{ banner.title }}">
       </div>
-    </ngx-slick-carousel>
-    <div class="carousel-buttons">
-      <!-- Add your custom navigation buttons here -->
-      <button class="carousel-button prev-button" (click)="slickModal.slickPrev()"><</button>
-      <button class="carousel-button next-button" (click)="slickModal.slickNext()">></button>
     </div>
-  </div>
+  </ngx-slick-carousel>
 </div>
 
+<!-- Carrossel para telas desktop -->
+<div class="carousel-wrapper" *ngIf="banners && banners.length > 0">
+  <ngx-slick-carousel class="banner-carousel-desktop" #slickModal="slick-carousel" [config]="desktopSlideConfig">
+    <div ngxSlickItem *ngFor="let banner of banners">
+      <div *ngIf="banner.is_desktop">
+        <!-- Conteúdo do carrossel para telas desktop -->
+        <img [src]="'https://assets.instabuy.com.br/ib.store.banner/bnr-' + banner.image" alt="{{ banner.title }}">
+      </div>
+    </div>
+  </ngx-slick-carousel>
+</div>
 
-  
-<!-- Lista de categorias -->
-<div>
-  <div *ngFor="let categoria of categorias" class="categoria-card">
-    <div class="card">
-      <h3>{{ categoria.title }}</h3>
-      <!-- Carousel da categoria -->
+<html>
+  <body>
+    <div class="carousel-wrapper">
+      <div class="card">
+        <div class="offer-container">
+          <div class="offer-content">
+            <span class="offer-icon">
+              <fa-icon [icon]="boltIcon"></fa-icon>
+            </span>
+            <h3 class="offer-text">Ofertas</h3>
+          </div>
+          <h3 class="offer-link">
+            <a href="" class="see-more">ver tudo</a>
+            <fa-icon [icon]="faAngleRight" class="see-icon"></fa-icon>
+          </h3>
+        </div>
+      
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-        <div ngxSlickItem *ngFor="let item of categoria.items" class="slide">
-         
+        <div ngxSlickItem *ngFor="let item of promo" class="slide card-item">
+          <!--<p>{{ item.description | removeTags }}</p> -->
           <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
-          <p  class="product-price">R$ {{ item.prices[0].price }}</p>
-          <h4 class="product-name">{{ item.name }}</h4>
-          <!-- ... Outros detalhes do item -->
+          <div class="product-prices">
+            <p class="product-price">R$ {{ item.min_price_valid.toFixed(2) }}</p>
+            <p class="product-nopromo">R$ {{ item.prices[0].price.toFixed(2) }}</p>
+          </div>
+          <h3 class="product-name">{{ item.name }}</h3>
         </div>
       </ngx-slick-carousel>
       <div class="carousel-buttons">
-        <!-- Add your custom navigation buttons here -->
-        <button class="carousel-button prev-button" (click)="slickModal.slickPrev()"><</button>
-        <button class="carousel-button next-button" (click)="slickModal.slickNext()">></button>
+        <button 
+          class="carousel-button prev-button" 
+          (click)="slickModal.slickPrev()"> 
+          <fa-icon 
+            [icon]="faAngleLeft">
+          </fa-icon>
+        </button>
+        <button class="carousel-button next-button" 
+          (click)="slickModal.slickNext()">
+          <fa-icon 
+            [icon]="faAngleRight">
+          </fa-icon>
+        </button>
       </div>
     </div>
   </div>
-</div>
+
+  <div>
+    <div *ngFor="let categoria of categoriasExibidas" class="categoria-card">
+      <div class="card">
+        <div class="header-title">
+          <h3 class="category-title">{{ categoria.title }}</h3>
+          <h3 class="link-title">
+            <a href="" class="see-more">ver tudo</a>
+            <fa-icon [icon]="faAngleRight" class="see-icon"></fa-icon>
+          </h3>
+        </div>
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+          <div ngxSlickItem *ngFor="let item of categoria.items" class="slide">
+            <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
+            <p  class="product-price">R$ {{ item.prices[0].price.toFixed(2) }}</p>
+            <h4 class="product-name">{{ item.name }}</h4>
+          </div>
+        </ngx-slick-carousel>
+        <div class="carousel-buttons">
+          <button 
+            class="carousel-button prev-button" 
+            (click)="slickModal.slickPrev()"> 
+            <fa-icon 
+              [icon]="faAngleLeft">
+            </fa-icon>
+          </button>
+        <button class="carousel-button next-button" 
+          (click)="slickModal.slickNext()">
+          <fa-icon 
+            [icon]="faAngleRight">
+          </fa-icon>
+        </button>
+        </div>
+      </div>
+    </div>
+    <div class="load-container">
+      <div class="Load" *ngIf="categoriasExibidas < categorias">
+        <button class="load-btn"(click)="carregarMaisCategorias()">
+          <fa-icon 
+              [icon]="faPlus">
+          </fa-icon>
+          Carregar mais</button>
+      </div>
+    </div>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=61992084411" target="_blank">
+    <img src="../../../assets/images/WhatsApp-Logo.png" class="whatsapp-icon" alt="WhatsApp">
+  </a>
+  </body>
 </html>
-
-

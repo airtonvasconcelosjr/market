@@ -1,0 +1,35 @@
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-section {
+    flex-basis: 25%;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-social {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .social-media, .payment {
+    flex-basis: 50%;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-wrap: wrap;
+    }
+    
+    .footer-section, .social-media, .payment {
+      flex-basis: 50%;
+      margin-bottom: 20px;
+    }
+  }
+  
