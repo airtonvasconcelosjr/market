@@ -1,0 +1,152 @@
+body {
+  background-color: white;
+}
+
+.top-bar-extra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: green;
+  color: white;
+  padding: 10px;
+}
+
+.left-section {
+  display: flex;
+}
+
+.location-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  margin-right: 10px;
+}
+
+.middle-section {
+  display: flex;
+  align-items: center;
+}
+
+.clock-icon {
+  margin-right: 5px;
+}
+
+.right-section {
+  display: flex;
+}
+
+.header {
+  background-color: white;
+  padding: 10px;
+  z-index: 100;
+  border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.header.fixed {
+  position: fixed;
+  padding: 10px;
+  top: 0;
+  width: 97vw;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-icon {
+  margin-left: 5px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-left: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.additional-icons {
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.additional-icons-inner {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.icon-item:hover{
+  background-color: rgb(200, 200, 200);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.additional-icon {
+  margin-right: 5px;
+}
+
+.icon-text {
+  font-size: 10px;
+}
+
+a {
+  text-decoration: none; 
+  color: inherit; 
+  cursor: pointer; 
+}
+
+
+@media (max-width: 768px) {
+  .additional-icons {
+    flex-wrap: wrap;
+  }
+
+  .icon-item:last-child,
+  .icon-item:nth-last-child(2) {
+    display: none;
+  }
+}
