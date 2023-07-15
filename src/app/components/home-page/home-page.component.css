@@ -3,6 +3,10 @@ html {
   background-color:  rgb(250, 250, 250) 
 }
 
+a{
+  text-decoration: none;
+}
+
 .offer-container {
   display: flex;
   justify-content: space-between;
@@ -83,6 +87,7 @@ html {
   padding: 20px;
   position: relative;
   margin: 0 6rem;
+  min-width: 300px;
 }
 
 .carousel-wrapper{
@@ -135,6 +140,7 @@ html {
   margin-bottom: 0.2rem;
   margin-top: 0.8rem;
 }
+
 
 .product-nopromo {
   color: rgb(66, 66, 66);
@@ -225,6 +231,11 @@ html {
   z-index: 9999;
   width: 8%;
   height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.5);
 }
 
 @media (max-width: 964px) {

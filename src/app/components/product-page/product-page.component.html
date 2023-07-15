@@ -1,8 +1,56 @@
-<div>
-    <h2>{{ product.name }}</h2>
-    <p>Preço: R$ {{ product.price }}</p>
-    <img [src]="product.imageUrl" alt="{{ product.name }}" />
-    <p>{{ product.description }}</p>
-    <p>{{ product.details }}</p>
+<div  *ngIf="product"  class="product-page">
+  <div class="category-container">
+    <p>{{ categoriaTitle }}</p>
   </div>
-  
+  <div class="card-container">
+    <div class="product-card">
+      <div class="image-carousel">
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+          <div ngxSlickItem *ngFor="let image of product.images" class="slide">
+            <img [src]="'https://assets.instabuy.com.br/ib.item.image.large/l-' + image" alt="{{ product.name }}">
+          </div>
+        </ngx-slick-carousel>
+        <div class="carousel-buttons">
+          <button 
+            class="carousel-button prev-button" 
+            (click)="slickModal.slickPrev()"> 
+            <fa-icon 
+              [icon]="faAngleLeft">
+            </fa-icon>
+          </button>
+          <button class="carousel-button next-button" 
+            (click)="slickModal.slickNext()">
+            <fa-icon 
+              [icon]="faAngleRight">
+            </fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="details-card">
+      <div class="product-details">
+        <h1 class="product-name">{{ product.name }}</h1>
+        <p class="product-brand"> {{ product.brand }}</p>
+        <div class="price-container">
+          <p class="promo-price">R$ {{ product.promo.toFixed(2) }}</p>
+          <p class="price">R$ {{ product.price.toFixed(2) }}</p>
+        </div>
+        <div class="quantity-container">
+          <button class="remove-button" (click)="resetInput()">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </button>
+          <input type="number" value="1" class="quantity-input">
+          <button class="add-button" (click)="incrementInput()">
+            <fa-icon [icon]="faPlus"></fa-icon>
+          </button>
+          <button class="add-to-cart-button">Adicionar ao carrinho</button>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="description-card">
+    <h2 class="description-title">Descrição do Produto</h2>
+    <p class="description-text">{{ product.description | removeTags }}</p>
+  </div>
+</div>

@@ -43,14 +43,13 @@
       
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let item of promo" class="slide card-item">
-          <a [routerLink]="['/product', item.id]"> <!-- Adicione o atributo routerLink com a rota e o parâmetro do ID do produto -->
+          <a [routerLink]="['/product', item.slug]">
           <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
           <div class="product-prices">
             <p class="product-price">R$ {{ item.min_price_valid.toFixed(2) }}</p>
             <p class="product-nopromo">R$ {{ item.prices[0].price.toFixed(2) }}</p>
           </div>
           <h3 class="product-name">{{ item.name }}</h3>
-          <h3 class="product-name">{{ item.slug }}</h3>
           </a>
         </div>
       </ngx-slick-carousel>
@@ -84,11 +83,17 @@
         </div>
         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
           <div ngxSlickItem *ngFor="let item of categoria.items" class="slide">
-            <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
-            <p  class="product-price">R$ {{ item.prices[0].price.toFixed(2) }}</p>
-            <h4 class="product-name">{{ item.name }}</h4>
+            <a [routerLink]="['/product', item.slug]">
+              <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
+              <div class="product-prices">
+                <p class="product-price">R$ {{ item.prices[0].price.toFixed(2) }}</p>
+                <p class="product-nopromo">R$ {{ item.prices[0].price.toFixed(2) }}</p>
+              </div>
+              <h4 class="product-name">{{ item.name }}</h4>
+            </a>
           </div>
         </ngx-slick-carousel>
+        
         <div class="carousel-buttons">
           <button 
             class="carousel-button prev-button" 
@@ -97,15 +102,16 @@
               [icon]="faAngleLeft">
             </fa-icon>
           </button>
-        <button class="carousel-button next-button" 
-          (click)="slickModal.slickNext()">
-          <fa-icon 
-            [icon]="faAngleRight">
-          </fa-icon>
-        </button>
+          <button class="carousel-button next-button" 
+            (click)="slickModal.slickNext()">
+            <fa-icon 
+              [icon]="faAngleRight">
+            </fa-icon>
+          </button>
         </div>
       </div>
     </div>
+  
     <div class="Load" *ngIf="categoriasExibidas < categorias">
       <button class="load-btn" (click)="carregarMaisCategorias()">
         <fa-icon [icon]="faPlus"></fa-icon>
