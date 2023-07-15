@@ -25,8 +25,10 @@
   }
 
   .divisor{
-    border-top: 1px solid rgb(215, 18, 18);
+    border: 1px solid rgb(241, 241, 241);
+    width: 80%;
   }
+
 
   .footer-footer{
     margin: 2rem;
