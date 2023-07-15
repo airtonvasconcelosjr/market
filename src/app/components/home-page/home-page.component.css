@@ -83,6 +83,7 @@ html {
   padding: 20px;
   position: relative;
   margin: 0 6rem;
+  min-width: 300px;
 }
 
 .carousel-wrapper{
@@ -225,6 +226,11 @@ html {
   z-index: 9999;
   width: 8%;
   height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.5);
 }
 
 @media (max-width: 964px) {

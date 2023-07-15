@@ -1,8 +1,12 @@
-<div>
-    <h2>{{ product.name }}</h2>
-    <p>Preço: R$ {{ product.price }}</p>
-    <img [src]="product.imageUrl" alt="{{ product.name }}" />
-    <p>{{ product.description }}</p>
-    <p>{{ product.details }}</p>
+<div *ngIf="product">
+  <div *ngIf="categoriaTitle">
+    <p>{{ categoriaTitle }}</p>
   </div>
-  
+  <h1>{{ product.name }}</h1>
+  <p>Preço R$ {{ product.price.toFixed(2) }}</p>
+    <p class="product-price">R$ {{ product.promo.toFixed(2) }}</p>
+    <p>Descrição: {{ product.description | removeTags }}</p>
+  <div *ngFor="let image of product.images">
+    <img [src]="'https://assets.instabuy.com.br/ib.item.image.medium/m-' + product.images" alt="{{ product.name }}">
+  </div>
+</div>

@@ -10,11 +10,13 @@ body {
   }
   
   .app-header {
+    min-width: 300px;
     width: 100vw;
     background-color: rgb(250, 250, 250); /* Altere a cor de fundo conforme necessário */
   }
   
   .app-footer {
+    min-width: 300px;
     width: 100vw;
     background-color: rgb(250, 250, 250); /* Altere a cor de fundo conforme necessário */
   }
