@@ -63,6 +63,9 @@ export class HomePageComponent implements OnInit {
     });
   }
   
+  filterByIsDesktop(banners: any[]): any[] {
+    return banners.filter(banner => banner.is_desktop);
+  }
 
   slideConfig = {
     slidesToShow: 5.5,
@@ -115,6 +118,7 @@ export class HomePageComponent implements OnInit {
     dots: false,
     autoplay: true,
     autoplaySpeed: 2000,
+    initialSlide: 1,
   };
 
   carregarMaisCategorias() {
