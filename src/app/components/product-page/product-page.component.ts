@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../api.service';
-import { Banner, Produto, Categoria, Promo } from '../../shared/models';
+import { Banner, Categoria, Promo } from '../../shared/models';
+import { faTrash, faAngleLeft, faAngleRight, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 interface ApiResponse {
@@ -25,6 +26,10 @@ export class ProductPageComponent implements OnInit {
   product: any;
   categorias!: Categoria[];
   categoriaTitle: string | undefined;
+  faTrash = faTrash;
+  faAngleLeft = faAngleLeft;
+  faAngleRight = faAngleRight;
+  faPlus = faPlus;
 
   constructor(
     private route: ActivatedRoute,
@@ -45,7 +50,7 @@ ngOnInit(): void {
 
   this.apiService.getLayout().subscribe((response: ApiResponse) => {
     this.categorias = response.data.collection_items;
-
+    console.log(response.data.collection_items)
     if (this.slug) {
       const categoria = this.findCategoriaBySlug(this.slug);
 
@@ -67,13 +72,42 @@ ngOnInit(): void {
             description: productData.description,
             price: productData.prices[0]?.price,
             promo: productData.min_price_valid,
-            images: productData.images
+            images: productData.images,
+            brand: productData.brand,
           };
+         console.log( productData.brand)
         },
         (error: any) => {
         }
       );
     }
   }
+
+  // Incrementar o valor do input de 1 em 1
+incrementInput() {
+  const inputElement = document.querySelector('.quantity-input') as HTMLInputElement;
+  if (inputElement) {
+    inputElement.value = (parseInt(inputElement.value) + 1).toString();
+  }
+}
+
+// Resetar o valor do input para 0
+resetInput() {
+  const inputElement = document.querySelector('.quantity-input') as HTMLInputElement;
+  if (inputElement) {
+    inputElement.value = '0';
+  }
+}
+
+
+  slideConfig = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: false,
+    nextArrow: false,
+    dots: false,
+    infinite: false,
+  };
+  
   
 }  

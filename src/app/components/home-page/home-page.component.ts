@@ -70,7 +70,7 @@ export class HomePageComponent implements OnInit {
     prevArrow: false,
     nextArrow: false,
     dots: false,
-    infinite: true,
+    infinite: false,
     responsive: [
       {
         breakpoint: 1200,
