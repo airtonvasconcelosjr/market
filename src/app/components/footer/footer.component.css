@@ -1,6 +1,7 @@
 .footer-container {
     display: flex;
     justify-content: space-between;
+    margin: 0 2rem;
   }
   
   .footer-section {

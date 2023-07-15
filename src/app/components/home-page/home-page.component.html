@@ -43,13 +43,15 @@
       
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let item of promo" class="slide card-item">
-          <!--<p>{{ item.description | removeTags }}</p> -->
+          <a [routerLink]="['/product', item.id]"> <!-- Adicione o atributo routerLink com a rota e o parâmetro do ID do produto -->
           <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
           <div class="product-prices">
             <p class="product-price">R$ {{ item.min_price_valid.toFixed(2) }}</p>
             <p class="product-nopromo">R$ {{ item.prices[0].price.toFixed(2) }}</p>
           </div>
           <h3 class="product-name">{{ item.name }}</h3>
+          <h3 class="product-name">{{ item.slug }}</h3>
+          </a>
         </div>
       </ngx-slick-carousel>
       <div class="carousel-buttons">
@@ -104,15 +106,13 @@
         </div>
       </div>
     </div>
-    <div class="load-container">
-      <div class="Load" *ngIf="categoriasExibidas < categorias">
-        <button class="load-btn"(click)="carregarMaisCategorias()">
-          <fa-icon 
-              [icon]="faPlus">
-          </fa-icon>
-          Carregar mais</button>
-      </div>
+    <div class="Load" *ngIf="categoriasExibidas < categorias">
+      <button class="load-btn" (click)="carregarMaisCategorias()">
+        <fa-icon [icon]="faPlus"></fa-icon>
+        Carregar mais
+      </button>
     </div>
+    
   </div>
   <a href="https://api.whatsapp.com/send?phone=61992084411" target="_blank">
     <img src="../../../assets/images/WhatsApp-Logo.png" class="whatsapp-icon" alt="WhatsApp">
