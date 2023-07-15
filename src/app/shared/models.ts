@@ -42,6 +42,7 @@ export interface Banner {
     min_price_valid: number;
     images: string;
     imagem: string;
+    slug: string;
     prices: {
       price: number;
     }[];

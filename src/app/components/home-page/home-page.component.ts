@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { Banner, Produto, Categoria, Promo } from '../../shared/models';
 import { faBolt, faAngleRight, faAngleLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 
 
@@ -35,7 +36,11 @@ export class HomePageComponent implements OnInit {
   
 
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService, 
+    private router: Router
+    ) {}
+
 
   ngOnInit() {
    

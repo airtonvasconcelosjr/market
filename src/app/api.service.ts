@@ -15,5 +15,9 @@ export class ApiService {
     const url = `${this.baseUrl}layout?subdomain=${this.subdomain}`;
     return this.http.get(url);
   }
-  
+
+  getProductDetails(productId: string): Observable<any> {
+    const url = `${this.baseUrl}product/${productId}?subdomain=${this.subdomain}`;
+    return this.http.get(url);
+  }
 }

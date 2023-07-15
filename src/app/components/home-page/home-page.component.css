@@ -82,6 +82,7 @@ html {
   border-radius: 10px;
   padding: 20px;
   position: relative;
+  margin: 0 6rem;
 }
 
 .carousel-wrapper{
@@ -166,7 +167,8 @@ html {
 
 .load-container {
   display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
+  justify-content: center; 
+
 }
 
 .Load {
@@ -181,6 +183,7 @@ html {
   border: none;
   outline: none;
   border-radius: 5px;
+  margin-bottom: 2rem;
 }
 
 .load-btn:hover{
