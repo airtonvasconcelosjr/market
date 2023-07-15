@@ -6,6 +6,7 @@
   
   .footer-section {
     flex-basis: 25%;
+    line-height: 28px;
   }
   
   ul {
@@ -21,6 +22,17 @@
   
   .social-media, .payment {
     flex-basis: 50%;
+  }
+
+  .divisor{
+    border: 1px solid rgb(241, 241, 241);
+    width: 80%;
+  }
+
+
+  .footer-footer{
+    margin: 2rem;
+    line-height: 22px;
   }
   
   @media (max-width: 768px) {
