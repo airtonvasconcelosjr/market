@@ -50,7 +50,6 @@ ngOnInit(): void {
 
   this.apiService.getLayout().subscribe((response: ApiResponse) => {
     this.categorias = response.data.collection_items;
-    console.log(response.data.collection_items)
     if (this.slug) {
       const categoria = this.findCategoriaBySlug(this.slug);
 

@@ -12,6 +12,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { CategoriesPageComponent } from './components/categories-page/categories-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     HeaderComponent,
     FooterComponent,
     HomePageComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    CategoriesPageComponent
   ],
   imports: [
     BrowserModule,

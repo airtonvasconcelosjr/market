@@ -1,0 +1,10 @@
+<h1>Todas as Categorias</h1>
+<div class="category-container">
+  <div *ngFor="let categoria of categorias" class="category-card">
+    <p>{{ categoria }}</p>
+    <div class="vertudo"> ver tudo
+        <fa-icon [icon]="faAngleRight"></fa-icon>
+    </div>
+  </div>
+ 
+</div>

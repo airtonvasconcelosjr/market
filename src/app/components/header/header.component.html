@@ -43,9 +43,9 @@
       <fa-icon [icon]="faHome" class="additional-icon"></fa-icon>
       <span class="icon-text">INÍCIO</span>
     </a>
-    <a href="pagina2.html" class="icon-item">
+    <a class="icon-item">
       <fa-icon [icon]="faListAlt" class="additional-icon"></fa-icon>
-      <span class="icon-text">Todas as categorias</span>
+      <a [routerLink]="['/categorias']">Todas as Categorias</a>
     </a>
     <a href="pagina3.html" class="icon-item">
       <fa-icon [icon]="faListAlt" class="additional-icon"></fa-icon>

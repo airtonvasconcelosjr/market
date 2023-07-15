@@ -20,5 +20,6 @@ export class ApiService {
     const url = `${this.baseUrl}item?subdomain=${this.subdomain}&slug=${slug}`;
     return this.http.get(url);
   }
+  
 
 }
