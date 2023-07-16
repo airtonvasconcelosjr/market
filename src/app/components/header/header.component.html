@@ -25,15 +25,19 @@
 
     <!-- Input de pesquisa -->
     <div class="search-bar">
-      <input type="text" placeholder="Buscar" class="search-input">
       <fa-icon [icon]="searchIcon" class="search-icon"></fa-icon>
+      <input type="text" placeholder="O que você procura?" class="search-input">
     </div>
 
     <!-- Ícones -->
     <div class="icons">
-      <fa-icon [icon]="faList" class="icon"></fa-icon>
-      <fa-icon [icon]="faUser" class="icon"></fa-icon>
-      <fa-icon [icon]="faShoppingCart" class="icon"></fa-icon>
+      <fa-icon [icon]="faList" class="header-icon"></fa-icon>
+      <h4 class="header-list-btn">Listas</h4>
+      <fa-icon [icon]="faUser" class="header-icon"></fa-icon>
+      <h4 class="header-account-btn">Minha Conta
+      <fa-icon [icon]="faAngleDown" class="header-icon"></fa-icon></h4>
+      <fa-icon [icon]="faShoppingCart" class="header-cart-icon"></fa-icon>
+      <h4 class="header-cart-btn">Carrinho</h4>
     </div>
   </div>
 </div>

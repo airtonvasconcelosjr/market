@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faSearch, faShoppingCart, faUser, faList, faClock, faLocation, faHome, faListAlt, faFire } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faShoppingCart, faUser, faList, faClock, faLocation, faHome, faListAlt, faFire, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   faHome = faHome;
   faListAlt = faListAlt;
   faFire = faFire;
+  faAngleDown = faAngleDown;
 
   ngOnInit() {
     window.addEventListener('scroll', function() {
