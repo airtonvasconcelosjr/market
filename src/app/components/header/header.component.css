@@ -48,7 +48,7 @@ body {
   position: fixed;
   padding: 10px;
   top: 0;
-  width: 97vw;
+  width: 100vw;
 }
 
 .top-bar {
@@ -60,6 +60,7 @@ body {
 .logo {
   display: flex;
   align-items: center;
+  margin-right: 1rem;
 }
 
 .logo-text {
@@ -71,22 +72,34 @@ body {
 .search-bar {
   display: flex;
   align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(245, 245, 245);
 }
 
 .search-input {
+  margin-left: 1rem;
+  margin-right: 1rem;
   padding: 5px;
-  border: 1px solid #ccc;
   border-radius: 5px;
+  width: 40vw;
+  min-width: 10vw;
+  outline: none;
+  border: none;
+  background-color: rgb(245, 245, 245);
+  font-size: 18px;
 }
 
 .search-icon {
-  margin-left: 5px;
+  margin-left: 1rem;
+  margin-right: 0;
 }
-
 .icons {
   display: flex;
   align-items: center;
   margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .icon {
@@ -141,6 +154,49 @@ a {
   cursor: pointer; 
 }
 
+.header-cart-icon {
+  color: white;
+  background-color: rgb(44, 151, 44);
+  padding: 10px 20px;
+  border-radius: 5px;
+  
+}
+
+.header-cart-btn{
+  margin-left: -20px;
+  color: white;
+  font-weight: 100;
+  background-color: rgb(44, 151, 44);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 2rem;
+}
+
+.header-icon{
+  margin-right: 10px;
+}
+
+.header-list-btn{
+  margin-right: 2rem;
+}
+
+.header-account-btn{
+  margin-right: 2rem;
+}
+
+
+@media (max-width: 967px) {
+  .header-icon,
+  .header-list-btn,
+  .header-account-btn,
+  .header-cart-btn {
+    display: none;
+  }
+  .header-cart-icon {
+    border-radius: 25px;
+    margin-right: 2rem;
+  }
+}
 
 @media (max-width: 768px) {
   .additional-icons {
