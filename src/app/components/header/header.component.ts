@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   faFire = faFire;
   faAngleDown = faAngleDown;
   faTimes = faTimes;
-  exibirCarrinho = true;
+  exibirCarrinho = false;
 
   constructor(private carrinhoService: CarrinhoComprasService) { }
 

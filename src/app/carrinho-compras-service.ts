@@ -9,6 +9,11 @@ export class CarrinhoComprasService {
 
   adicionarProduto(produto: any) {
     this.produtos.push(produto);
+    console.log('Produto adicionado:', produto);
+  }
+
+  getProdutos(): any[] {
+    return this.produtos;
   }
 
   calcularTotal() {
@@ -22,5 +27,5 @@ export class CarrinhoComprasService {
   alternarCarrinho() {
     this.carrinhoAberto = !this.carrinhoAberto;
   }
-
 }
+
