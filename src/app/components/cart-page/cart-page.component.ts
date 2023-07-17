@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarrinhoComprasService } from 'src/app/carrinho-compras-service';
+import { CarrinhoComprasService } from '../../carrinho-compras-service';
 
 @Component({
   selector: 'app-cart-page',
@@ -8,13 +8,20 @@ import { CarrinhoComprasService } from 'src/app/carrinho-compras-service';
 })
 export class CartPageComponent implements OnInit {
   produtos: any[] = [];
+  total: number = 0;
 
   constructor(private carrinhoService: CarrinhoComprasService) { }
 
   ngOnInit() {
     this.produtos = this.carrinhoService.getProdutos();
     console.log('Produtos no carrinho:', this.produtos);
+    this.produtos.forEach(produto => {
+      produto.quantidade = 1;
+      this.atualizarValor(produto); // Chama a função atualizarValor para calcular o valor total inicial
+      this.atualizarTotal();
+    });
   }
+  
 
   get carrinhoAberto() {
     return this.carrinhoService.carrinhoAberto;
@@ -24,11 +31,18 @@ export class CartPageComponent implements OnInit {
     this.carrinhoService.alternarCarrinho();
   }
 
-  calcularTotal(): number {
-    let total = 0;
-    for (let produto of this.produtos) {
-      total += produto.min_price_valid;;
-    }
-    return total;
+  atualizarTotal(): void {
+    this.total = this.produtos.reduce((acc, produto) => {
+      return acc + (produto.min_price_valid * produto.quantidade);
+    }, 0);
   }
+
+  atualizarValor(produto: any): void {
+    if (!produto.quantidade || isNaN(produto.quantidade) || produto.quantidade < 1) {
+      produto.quantidade = 1;
+    }
+    produto.valorTotal = (produto.min_price_valid * produto.quantidade).toFixed(2);
+    this.atualizarTotal();
+  }
+  
 }

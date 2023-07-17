@@ -14,6 +14,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CategoriesPageComponent } from './components/categories-page/categories-page.component';
 import { CartPageComponent } from './components/cart-page/cart-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CartPageComponent } from './components/cart-page/cart-page.component';
     HttpClientModule,
     SlickCarouselModule,
     FontAwesomeModule,
+    FormsModule,
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
