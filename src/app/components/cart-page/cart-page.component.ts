@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarrinhoComprasService } from 'src/app/carrinho-compras-service';
 
 @Component({
@@ -6,9 +6,15 @@ import { CarrinhoComprasService } from 'src/app/carrinho-compras-service';
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css']
 })
-export class CartPageComponent {
-  
+export class CartPageComponent implements OnInit {
+  produtos: any[] = [];
+
   constructor(private carrinhoService: CarrinhoComprasService) { }
+
+  ngOnInit() {
+    this.produtos = this.carrinhoService.getProdutos();
+    console.log('Produtos no carrinho:', this.produtos);
+  }
 
   get carrinhoAberto() {
     return this.carrinhoService.carrinhoAberto;
@@ -17,12 +23,11 @@ export class CartPageComponent {
   alternarCarrinho() {
     this.carrinhoService.alternarCarrinho();
   }
-  produtos: any[] = []; // Declare a propriedade 'produtos' como um array vazio
+
   calcularTotal(): number {
-    // Implemente a função 'calcularTotal' para calcular o valor total dos produtos
     let total = 0;
     for (let produto of this.produtos) {
-      total += produto.valor;
+      total += produto.prices[0].price;
     }
     return total;
   }

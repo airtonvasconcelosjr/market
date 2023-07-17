@@ -43,6 +43,7 @@
       
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let item of promo" class="slide card-item">
+          <button (click)="adicionarProdutoAoCarrinho(item)">+</button>
           <a [routerLink]="['/product', item.slug]">
           <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
           <div class="product-prices">
@@ -50,7 +51,7 @@
             <p class="product-nopromo">R$ {{ item.prices[0].price.toFixed(2) }}</p>
           </div>
           <h3 class="product-name">{{ item.name }}</h3>
-          <button (click)="adicionarProdutoAoCarrinho(item)">+</button>
+        
 
           </a>
         </div>

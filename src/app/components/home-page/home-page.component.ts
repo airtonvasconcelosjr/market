@@ -70,9 +70,9 @@ export class HomePageComponent implements OnInit {
     return banners.filter(banner => banner.is_desktop);
   }
 
-  adicionarProdutoAoCarrinho(produto: any) {
-    this.carrinhoService.adicionarProduto(produto);
-  }
+ adicionarProdutoAoCarrinho(produto: any) {
+  this.carrinhoService.adicionarProduto(produto);
+}
   
 
   slideConfig = {

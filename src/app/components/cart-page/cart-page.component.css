@@ -1,11 +1,6 @@
   .produto {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 10px;
-  }
-  
-  .total {
-    margin-top: 20px;
   }
   
   .carrinho-compras {
@@ -29,8 +24,26 @@
     position: fixed;
     bottom: 0;
     right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
+  .finalizar-compra-text{
+    margin-left: 1rem;
+  }
+  .total {
+    margin-right: 1rem;
+    background-color: rgb(33, 114, 33); 
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .total p::before {
+    content: 'Total: R$';
+    display: inline;
+    margin-right: 5px;
+  }
   
   
   
