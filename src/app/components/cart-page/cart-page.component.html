@@ -1,7 +1,7 @@
 <div class="carrinho-compras">
     <div *ngFor="let produto of produtos" class="produto">
       <p>{{ produto.name }}</p>
-      <p> {{ produto.prices[0].price.toFixed(2) }}</p>
+      <p> {{ produto.min_price_valid.toFixed(2) }} </p>
     </div>
     <button class="finalizar-compra">
       <span class="finalizar-compra-text"> Finalizar Compra </span>

@@ -97,12 +97,11 @@ a{
   margin-bottom: 20px;
 }
 
-.card-item{
-  text-align: center;
+.card-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  }
+  position: relative;
+}
 
 .card-item img {
   margin-bottom: 5px;
@@ -232,6 +231,22 @@ a{
   width: 8%;
   height: auto;
   transition: transform 0.3s ease-in-out;
+}
+
+
+
+.add-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  background-color: rgb(241, 241, 241);
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  color: black;
+  font-size: 20px;
+  box-shadow: 1px 1px 6px rgba(58, 58, 58, 0.2);
 }
 
 .whatsapp-icon:hover {

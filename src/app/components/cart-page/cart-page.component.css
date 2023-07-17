@@ -4,7 +4,7 @@
   }
   
   .carrinho-compras {
-    width: 500px; /* Largura desejada para o cart-modal */
+    width: 450px; /* Largura desejada para o cart-modal */
     background-color: #fff;
     padding: 20px;
     z-index: 999!important;

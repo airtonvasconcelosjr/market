@@ -19,7 +19,7 @@ export class CarrinhoComprasService {
   calcularTotal() {
     let total = 0;
     for (const produto of this.produtos) {
-      total += produto.valor;
+      total +=  produto.min_price_valid;
     }
     return total;
   }

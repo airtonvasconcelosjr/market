@@ -27,7 +27,7 @@ export class CartPageComponent implements OnInit {
   calcularTotal(): number {
     let total = 0;
     for (let produto of this.produtos) {
-      total += produto.prices[0].price;
+      total += produto.min_price_valid;;
     }
     return total;
   }
