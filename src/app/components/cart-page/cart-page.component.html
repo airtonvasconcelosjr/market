@@ -1,0 +1,12 @@
+<div class="carrinho-compras">
+    <h2>Carrinho de Compras</h2>
+    <div *ngFor="let produto of produtos" class="produto">
+      <p>{{ produto.nome }}</p>
+      <p>R$ {{ produto.valor }}</p>
+    </div>
+    <div class="total">
+      <p>Total: R$ {{ calcularTotal() }}</p>
+    </div>
+    <button class="finalizar-compra">Finalizar Compra</button>
+  </div>
+  

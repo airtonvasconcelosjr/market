@@ -1,0 +1,39 @@
+  .produto {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .total {
+    margin-top: 20px;
+  }
+  
+  .carrinho-compras {
+    width: 500px; /* Largura desejada para o cart-modal */
+    background-color: #fff;
+    padding: 20px;
+    z-index: 999!important;
+    right: 0;
+    height: 100vh;
+    top: 0;
+    position: relative;
+  }
+  
+  .finalizar-compra {
+    width: 500px;
+    background-color: rgb(44, 151, 44);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+  
+  
+  
+  
+  
+
+  
