@@ -1,10 +1,17 @@
+  .produto-container {
+    height: 80vh;
+    max-height: 70%;
+    overflow-y: auto; 
+  }
+
   .produto {
     display: flex;
     margin-bottom: 10px;
+    border-bottom: 1px solid rgb(222, 222, 222);
   }
   
   .carrinho-compras {
-    width: 450px; /* Largura desejada para o cart-modal */
+    width: 480px; 
     background-color: #fff;
     padding: 20px;
     z-index: 999!important;
