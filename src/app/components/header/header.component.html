@@ -35,17 +35,23 @@
       <h4 class="header-list-btn">Listas</h4>
       <fa-icon [icon]="faUser" class="header-icon"></fa-icon>
       <h4 class="header-account-btn">Minha Conta
-      <fa-icon [icon]="faAngleDown" class="header-icon"></fa-icon></h4>
+        <fa-icon [icon]="faAngleDown" class="header-icon"></fa-icon>
+      </h4>
       <button (click)="abrirCarrinho()" class="header-cart-button">
         <fa-icon [icon]="faShoppingCart" class="header-cart-icon"></fa-icon>
         <span class="cart-text">Carrinho</span>
+        <span class="cart-item-count">{{ getCarrinhoItemCount() }}</span>
       </button>
       
       <div class="carrinho-modal" *ngIf="exibirCarrinho">
         <div class="modal-header">
-          <button class="close-modal" (click)="fecharCarrinho()">X</button>
+          <button class="close-modal" (click)="fecharCarrinho()">
+            <fa-icon 
+              [icon]="faAngleLeft">
+            </fa-icon>
+          </button>
           <h1 class="modal-title">Meu carrinho</h1>
-          <button class="clear-modal"> Limpar</button>
+          <button class="clear-modal" >Limpar</button>
         </div>
         <app-cart-page></app-cart-page>
       </div>

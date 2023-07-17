@@ -1,52 +1,98 @@
-  .produto {
-    display: flex;
-    margin-bottom: 10px;
-  }
-  
-  .carrinho-compras {
-    width: 500px; /* Largura desejada para o cart-modal */
-    background-color: #fff;
-    padding: 20px;
-    z-index: 999!important;
-    right: 0;
-    height: 100vh;
-    top: 0;
-    position: relative;
-  }
-  
-  .finalizar-compra {
-    width: 500px;
-    background-color: rgb(44, 151, 44);
-    color: #fff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .finalizar-compra-text{
-    margin-left: 1rem;
-  }
-  .total {
-    margin-right: 1rem;
-    background-color: rgb(33, 114, 33); 
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  
-  .total p::before {
-    content: 'Total: R$';
-    display: inline;
-    margin-right: 5px;
-  }
-  
-  
-  
-  
+.produto {
+  display: flex;
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(222, 222, 222);
+}
 
-  
+.produto-quantidade {
+  margin: 1.5rem 1rem 0 1rem;
+}
+
+.qtd {
+  text-align: center;
+  width: 50px;
+  height: 40px;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgb(244, 244, 244);
+  outline: none;
+  margin-left: -1rem;
+}
+
+.qtd:hover{
+  background-color: rgb(216, 216, 216);
+}
+
+.produto-name {
+  width: 200px;
+  margin-left: 0.5rem;
+}
+
+.produto-image {
+  width: 20%;
+  height: auto;
+}
+
+.carrinho-compras {
+  width: 470px;
+  background-color: #fff;
+  padding: 20px;
+  z-index: 999!important;
+  right: 0;
+  height: 100vh;
+  top: 0;
+  position: relative;
+}
+
+.finalizar-compra {
+  width: 500px;
+  background-color: rgb(44, 151, 44);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.finalizar-compra-text {
+  margin-left: 1rem;
+}
+
+.total {
+  margin-right: 1.5rem;
+  background-color: rgb(33, 114, 33);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.total p::before {
+  content: 'Total: R$';
+  display: inline;
+  margin-right: 5px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.produto-container {
+  height: 80vh;
+  max-height: 70%;
+  overflow-y: auto;
+}
+
+.quebra-linha {
+  width: 500px;
+  flex-basis: 100%;
+  height: 0;
+}

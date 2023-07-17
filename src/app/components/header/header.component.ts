@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faSearch, faShoppingCart, faUser, faList, faClock, faLocation, faHome, faListAlt, faFire, faAngleDown, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faShoppingCart, faUser, faList, faClock, faLocation, faHome, faListAlt, faFire, faAngleDown, faTimes, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { CarrinhoComprasService } from '../../carrinho-compras-service';
 
 @Component({
@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
   faAngleDown = faAngleDown;
   faTimes = faTimes;
   exibirCarrinho = false;
+  faAngleLeft = faAngleLeft;
 
   constructor(private carrinhoService: CarrinhoComprasService) { }
 
@@ -33,6 +34,10 @@ export class HeaderComponent implements OnInit {
 
   fecharCarrinho() {
     this.exibirCarrinho = false;
+  }
+
+  getCarrinhoItemCount(): number {
+    return this.carrinhoService.getProdutos().length;
   }
 
   ngOnInit() {
