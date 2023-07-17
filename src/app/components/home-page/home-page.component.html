@@ -50,6 +50,8 @@
             <p class="product-nopromo">R$ {{ item.prices[0].price.toFixed(2) }}</p>
           </div>
           <h3 class="product-name">{{ item.name }}</h3>
+          <button (click)="adicionarProdutoAoCarrinho(item)">+</button>
+
           </a>
         </div>
       </ngx-slick-carousel>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faSearch, faShoppingCart, faUser, faList, faClock, faLocation, faHome, faListAlt, faFire, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faShoppingCart, faUser, faList, faClock, faLocation, faHome, faListAlt, faFire, faAngleDown, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { CarrinhoComprasService } from '../../carrinho-compras-service';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +18,22 @@ export class HeaderComponent implements OnInit {
   faListAlt = faListAlt;
   faFire = faFire;
   faAngleDown = faAngleDown;
+  faTimes = faTimes;
+  exibirCarrinho = true;
+
+  constructor(private carrinhoService: CarrinhoComprasService) { }
+
+  alternarCarrinho() {
+    this.carrinhoService.alternarCarrinho();
+  }
+
+  abrirCarrinho() {
+    this.exibirCarrinho = true;
+  }
+
+  fecharCarrinho() {
+    this.exibirCarrinho = false;
+  }
 
   ngOnInit() {
     window.addEventListener('scroll', function() {

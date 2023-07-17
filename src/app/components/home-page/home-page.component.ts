@@ -3,6 +3,8 @@ import { ApiService } from '../../api.service';
 import { Banner, Produto, Categoria, Promo } from '../../shared/models';
 import { faBolt, faAngleRight, faAngleLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { CarrinhoComprasService } from '../../carrinho-compras-service';
+
 
 
 
@@ -38,7 +40,8 @@ export class HomePageComponent implements OnInit {
 
   constructor(
     private apiService: ApiService, 
-    private router: Router
+    private router: Router,
+    private carrinhoService: CarrinhoComprasService
     ) {}
 
 
@@ -66,6 +69,11 @@ export class HomePageComponent implements OnInit {
   filterByIsDesktop(banners: any[]): any[] {
     return banners.filter(banner => banner.is_desktop);
   }
+
+  adicionarProdutoAoCarrinho(produto: any) {
+    this.carrinhoService.adicionarProduto(produto);
+  }
+  
 
   slideConfig = {
     slidesToShow: 5.5,

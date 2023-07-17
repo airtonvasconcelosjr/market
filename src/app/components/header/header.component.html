@@ -36,36 +36,15 @@
       <fa-icon [icon]="faUser" class="header-icon"></fa-icon>
       <h4 class="header-account-btn">Minha Conta
       <fa-icon [icon]="faAngleDown" class="header-icon"></fa-icon></h4>
-      <fa-icon [icon]="faShoppingCart" class="header-cart-icon"></fa-icon>
-      <h4 class="header-cart-btn">Carrinho</h4>
+      <button (click)="abrirCarrinho()" class="header-cart-button">
+        <fa-icon [icon]="faShoppingCart" class="header-cart-icon"></fa-icon>
+        <span class="cart-text">Carrinho</span>
+      </button>
+      
+      <div class="carrinho-modal" *ngIf="exibirCarrinho">
+        <button class="close-modal" (click)="fecharCarrinho()">X</button>
+        <app-cart-page></app-cart-page>
+      </div>
     </div>
-  </div>
-</div>
-<div class="additional-icons">
-  <div class="additional-icons-inner">
-    <a [routerLink]="['/home']" class="icon-item">
-      <fa-icon [icon]="faHome" class="additional-icon"></fa-icon>
-      <span class="icon-text">INÍCIO</span>
-    </a>
-    <a class="icon-item">
-      <fa-icon [icon]="faListAlt" class="additional-icon"></fa-icon>
-      <a [routerLink]="['/categorias']">Todas as Categorias</a>
-    </a>
-    <a href="pagina3.html" class="icon-item">
-      <fa-icon [icon]="faListAlt" class="additional-icon"></fa-icon>
-      <span class="icon-text">Ofertas</span>
-    </a>
-    <a href="pagina4.html" class="icon-item">
-      <fa-icon [icon]="faFire" class="additional-icon"></fa-icon>
-      <span class="icon-text">KIT CHURRASCO</span>
-    </a>
-    <a href="pagina5.html" class="icon-item">
-      <fa-icon [icon]="faFire" class="additional-icon"></fa-icon>
-      <span class="icon-text">Açougue / Aves / Peixaria </span>
-    </a>
-    <a href="pagina6.html" class="icon-item">
-      <fa-icon [icon]="faFire" class="additional-icon"></fa-icon>
-      <span class="icon-text">Frios e Laticínios</span>
-    </a>
   </div>
 </div>
