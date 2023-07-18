@@ -42,16 +42,16 @@
         </div>
       
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-        <div ngxSlickItem *ngFor="let item of promo" class="slide card-item">
+        <div ngxSlickItem *ngFor="let produto of promo" class="slide card-item">
           <div class="product-container">
-            <button class="add-btn" (click)="adicionarProdutoAoCarrinho(item)">+</button>
-            <a [routerLink]="['/product', item.slug]">
-            <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
+            <button class="add-btn" (click)="adicionarProdutoAoCarrinho(produto)">+</button>
+            <a [routerLink]="['/product', produto.slug]">
+            <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + produto.images[0]" alt="Produto">
             <div class="product-prices">
-              <p class="product-price">R$ {{ item.min_price_valid.toFixed(2) }}</p>
-              <p class="product-nopromo">R$ {{ item.prices[0].price.toFixed(2) }}</p>
+              <p class="product-price">R$ {{ produto.promoprice.toFixed(2) }}</p>
+              <p class="product-nopromo">R$ {{ produto.prices[0].price.toFixed(2) }}</p>
             </div>
-            <h3 class="product-name">{{ item.name }}</h3>
+            <h3 class="product-name">{{ produto.name }}</h3>
             </a>
           </div>
         </div>
@@ -85,15 +85,15 @@
           </h3>
         </div>
         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-          <div ngxSlickItem *ngFor="let item of categoria.items" class="slide card-item">
-            <button class="add-btn" (click)="adicionarProdutoAoCarrinho(item)">+</button>
-            <a [routerLink]="['/product', item.slug]">
-              <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + item.images[0]" alt="Produto">
+          <div ngxSlickItem *ngFor="let produto of categoria.items" class="slide card-item">
+            <button class="add-btn" (click)="adicionarProdutoAoCarrinho(produto)">+</button>
+            <a [routerLink]="['/product', produto.slug]">
+              <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + produto.images[0]" alt="Produto">
               <div class="product-prices">
-                <p class="product-price">R$ {{ item.min_price_valid.toFixed(2) }}</p>
-                <p class="product-nopromo">R$ {{ item.prices[0].price.toFixed(2) }}</p>
+                <p class="product-price">R$ {{ produto.promoprice.toFixed(2) }}</p>
+                <p class="product-nopromo">R$ {{ produto.prices[0].price.toFixed(2) }}</p>
               </div>
-              <h4 class="product-name">{{ item.name }}</h4>
+              <h4 class="product-name">{{ produto.name }}</h4>
             </a>
           </div>
         </ngx-slick-carousel>

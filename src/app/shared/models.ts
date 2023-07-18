@@ -13,6 +13,7 @@ export interface Banner {
     description: string;
     name:string;
     min_price_valid: number;
+    promoprice: number;
     images: string;
     imagem: string;
     slug: string;
@@ -41,6 +42,7 @@ export interface Banner {
     description: string;
     name:string;
     min_price_valid: number;
+    promoprice: number;
     images: string;
     imagem: string;
     slug: string;

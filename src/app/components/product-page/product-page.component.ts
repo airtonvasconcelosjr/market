@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../api.service';
 import { Banner, Categoria, Promo } from '../../shared/models';
 import { faTrash, faAngleLeft, faAngleRight, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { CarrinhoComprasService } from '../../carrinho-compras-service';
 
 
 interface ApiResponse {
@@ -23,7 +24,7 @@ interface ApiResponse {
 })
 export class ProductPageComponent implements OnInit {
   slug?: string;
-  product: any;
+  produto: any;
   categorias!: Categoria[];
   categoriaTitle: string | undefined;
   faTrash = faTrash;
@@ -33,7 +34,8 @@ export class ProductPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private carrinhoService: CarrinhoComprasService
   ) {}
 
   findCategoriaBySlug(slug: string): Categoria | undefined {
@@ -66,14 +68,17 @@ ngOnInit(): void {
       this.apiService.getProductDetails(this.slug).subscribe(
         (response: any) => {
           const productData = response.data[0];
-          this.product = {
+          this.produto = {
             name: productData.name,
             description: productData.description,
-            price: productData.prices[0]?.price,
-            promo: productData.min_price_valid,
+            price: parseFloat(productData.prices[0]?.price),
+            promoprice: parseFloat(productData.min_price_valid),
             images: productData.images,
             brand: productData.brand,
+            quantidade: 1,
+            valorTotal: 0, 
           };
+          
          console.log( productData.brand)
         },
         (error: any) => {
@@ -82,7 +87,6 @@ ngOnInit(): void {
     }
   }
 
-  // Incrementar o valor do input de 1 em 1
 incrementInput() {
   const inputElement = document.querySelector('.quantity-input') as HTMLInputElement;
   if (inputElement) {
@@ -90,13 +94,18 @@ incrementInput() {
   }
 }
 
-// Resetar o valor do input para 0
+
 resetInput() {
   const inputElement = document.querySelector('.quantity-input') as HTMLInputElement;
   if (inputElement) {
     inputElement.value = '0';
   }
 }
+
+adicionarProdutoAoCarrinho(produto: any) {
+  this.carrinhoService.adicionarProduto(produto);
+}
+
 
 
   slideConfig = {

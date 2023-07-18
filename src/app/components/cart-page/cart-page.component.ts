@@ -17,7 +17,7 @@ export class CartPageComponent implements OnInit {
     console.log('Produtos no carrinho:', this.produtos);
     this.produtos.forEach(produto => {
       produto.quantidade = 1;
-      this.atualizarValor(produto); // Chama a função atualizarValor para calcular o valor total inicial
+      this.atualizarValor(produto); 
       this.atualizarTotal();
     });
   }
@@ -45,10 +45,13 @@ export class CartPageComponent implements OnInit {
     this.atualizarTotal();
   }
 
-  limparCarrinho(): void {
-    this.produtos = []; // Zera o array de produtos
-    this.total = 0; // Zera o valor total
+  limparCarrinho() {
+   
+    this.carrinhoService.limparCarrinho();
+    this.produtos = []; 
   }
-  
-  
+
+  calcularValorTotal(produto: any): number {
+    return produto.price * produto.quantidade;
+  }
 }

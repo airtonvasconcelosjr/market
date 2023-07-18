@@ -29,8 +29,8 @@ export class CarrinhoComprasService {
   }
 
   limparCarrinho(): void {
-    this.produtos = []; // Zera o array de produtos
-     // Zera o valor total
+    this.produtos = []; 
   }
+  
 }
 

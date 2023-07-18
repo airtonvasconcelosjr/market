@@ -54,14 +54,20 @@ export class HomePageComponent implements OnInit {
       this.categorias = response.data.collection_items;
       this.categoriasExibidas = this.categorias.slice(0, this.quantidadeCategoriasExibidas);
       this.promo = response.data.promo;
-      this.promo.forEach(item => {
-        const price = item.prices[0]?.price;
+      this.promo.forEach(produto => {
+        const price = produto.prices[0]?.price;
+        const promoprice = produto.min_price_valid;
+        produto.promoprice = promoprice;
       });
+      
       this.categorias.forEach(categoria => {
-        categoria.items.forEach(item => {
-          const price = item.prices[0]?.price; 
-          ;
+        categoria.items.forEach(produto => {
+          const price = produto.prices[0]?.price; 
+          const promoprice = produto.min_price_valid;
+          produto.promoprice = promoprice;
         });
+
+        
       });
     });
   }
