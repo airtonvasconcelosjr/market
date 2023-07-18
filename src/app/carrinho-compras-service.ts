@@ -27,5 +27,10 @@ export class CarrinhoComprasService {
   alternarCarrinho() {
     this.carrinhoAberto = !this.carrinhoAberto;
   }
+
+  limparCarrinho(): void {
+    this.produtos = []; // Zera o array de produtos
+     // Zera o valor total
+  }
 }
 

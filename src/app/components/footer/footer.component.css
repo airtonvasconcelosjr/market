@@ -44,5 +44,13 @@
       flex-basis: 50%;
       margin-bottom: 20px;
     }
+
+    .footer-container {
+      margin: 0 2.5rem;
+    }
+    .footer-footer{
+      margin: 0 2.5rem;
+    }
+   
   }
   

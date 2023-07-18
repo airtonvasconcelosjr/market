@@ -90,7 +90,7 @@ a{
   min-width: 300px;
 }
 
-.carousel-wrapper{
+.carousel-wrapper-desktop{
   background-color:  rgb(250, 250, 250);
   padding: 20px;
   border-radius: 10px;
@@ -240,6 +240,8 @@ a{
   top: 0;
   right: 0;
   padding: 5px 10px;
+  
+  margin: 5px 10px;
   background-color: rgb(241, 241, 241);
   border: none;
   cursor: pointer;
@@ -254,15 +256,13 @@ a{
 }
 
 @media (max-width: 964px) {
-  .banner-carousel-desktop {
-    display: none;
-  }
-}
-
-@media (max-width: 964px) {
   .banner-carousel-mobile {
     display: block;
   }
+  .banner-carousel-desktop {
+    display: none;
+  }
+  
 
   .carousel-wrapper-mobile{
     display: block;
@@ -273,5 +273,23 @@ a{
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
+  }
+
+  .carousel-wrapper-desktop{
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .card{
+    margin: 0;
+  }
+
+  .carousel-wrapper-mobile{
+    margin: 0;
+  }
+
+  .whatsapp-icon {
+    width: 100px;
   }
 }
