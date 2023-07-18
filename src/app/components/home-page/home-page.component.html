@@ -13,7 +13,7 @@
 </div>
 
 <!-- Carrossel para telas desktop -->
-<div class="carousel-wrapper" *ngIf="banners && banners.length > 0">
+<div class="carousel-wrapper-desktop" *ngIf="banners && banners.length > 0">
   <ngx-slick-carousel class="banner-carousel-desktop" #slickModal="slick-carousel" [config]="desktopSlideConfig">
     <div ngxSlickItem *ngFor="let banner of banners">
       <div *ngIf="banner.is_desktop">

@@ -1,5 +1,9 @@
+<div class="remove-button">
+  <button class="clear-btn" (click)="limparCarrinho()">Limpar</button>
+</div>
 <div class="carrinho-compras">
   <div class="produto-container">
+   
     <div *ngFor="let produto of produtos" class="produto">
       <img  class="produto-image" [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + produto.images[0]" alt="{{ produto.name }}">
       <p class="produto-name">{{ produto.name }}</p>

@@ -21,6 +21,8 @@ export class HeaderComponent implements OnInit {
   faTimes = faTimes;
   exibirCarrinho = false;
   faAngleLeft = faAngleLeft;
+  formattedToday!: string;
+  formattedTomorrow!: string;
 
   constructor(private carrinhoService: CarrinhoComprasService) { }
 
@@ -40,8 +42,17 @@ export class HeaderComponent implements OnInit {
     return this.carrinhoService.getProdutos().length;
   }
 
+  getFormattedDate(date: Date): string {
+    const options = {
+      weekday: 'long' as const,
+      month: 'long' as const,
+      day: 'numeric' as const
+    };
+    return date.toLocaleDateString('pt-BR', options);
+  }
+
   ngOnInit() {
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', () => {
       var header = document.querySelector('.header');
       var scrollPosition = window.scrollY;
 
@@ -51,5 +62,12 @@ export class HeaderComponent implements OnInit {
         header?.classList.remove('fixed');
       }
     });
+
+    const today = new Date();
+    const tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1);
+    
+    this.formattedToday = this.getFormattedDate(today); // Data atual formatada
+    this.formattedTomorrow = this.getFormattedDate(tomorrow); // Data do dia seguinte formatada
   }
 }

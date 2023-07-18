@@ -4,7 +4,6 @@ body {
 
 .top-bar-extra {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: green;
   color: white;
@@ -21,19 +20,35 @@ body {
   cursor: pointer;
   color: white;
   margin-right: 10px;
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  font-size: 14px;
+}
+
+.location-text {
+  margin-left: 0.5rem;
 }
 
 .middle-section {
   display: flex;
   align-items: center;
+  margin: 0 1rem;
+  font-size: 14px;
 }
 
 .clock-icon {
-  margin-right: 5px;
+  margin-right: 0.5rem;
 }
 
 .right-section {
   display: flex;
+  margin: 0 2rem;
+  align-items: center;
+}
+
+.right-text {
+  font-size: 14px;
 }
 
 .header {
@@ -200,9 +215,14 @@ a {
   background-color: rgb(242, 242, 242);
 }
 
-.close-modal,
+.close-modal {
+  z-index: 5;
+}
+
 .clear-modal {
-  margin-right: 10px;
+  outline: none;
+  border: none;
+  color: rgb(242, 242, 242);
 }
 
 .close-modal:hover,
@@ -222,6 +242,12 @@ a {
 }
 
 
+@media (max-width: 1354px) {
+  .additional-icons-inner a:not(:nth-child(-n+4)) {
+    display: none;
+  }
+}
+
 @media (max-width: 967px) {
   .header-icon,
   .header-list-btn,
@@ -238,15 +264,57 @@ a {
     border-radius: 25px;
     margin-left: 5px;
   }
+  .left-section {
+    display: none;
+  }
+  .middle-section{
+    margin-left: 20%;
+  }
 }
 
-@media (max-width: 768px) {
-  .additional-icons {
-    flex-wrap: wrap;
-  }
 
+
+@media (max-width: 768px) {
+  .header {
+    width: 100%;
+    margin: 0;
+  }
+  .top-bar {
+    display: flex;
+    margin: 0;
+  }
+  .search-input{
+    display: none;
+  }
+  .search-bar{
+    display: flex;
+    text-align: center;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+  }
+  .search-icon {
+    margin-right: 1rem; /* Ajuste a margem conforme necessário */
+  }
+  .additional-icons-inner{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
   .icon-item:last-child,
   .icon-item:nth-last-child(2) {
     display: none;
   }
+
+  .middle-section,
+  .right-section {
+    margin: 0 2rem;
+  }
+  .clock-text,
+  .right-text {
+    font-size: 10px;
+    margin: 0;
+  }
+
 }

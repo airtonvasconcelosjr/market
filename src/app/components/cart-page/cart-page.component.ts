@@ -44,5 +44,11 @@ export class CartPageComponent implements OnInit {
     produto.valorTotal = (produto.min_price_valid * produto.quantidade).toFixed(2);
     this.atualizarTotal();
   }
+
+  limparCarrinho(): void {
+    this.produtos = []; // Zera o array de produtos
+    this.total = 0; // Zera o valor total
+  }
+  
   
 }

@@ -2,16 +2,18 @@
   <div class="left-section">
     <button class="location-button">
       <fa-icon [icon]="faLocation"></fa-icon>
+      <p class="location-text">Retirar em: Asa Norte, Campus Universitário Darcy Ribeiro Bloco A  PMU I Sala AT 08/03 - AC UNB, Edificio CDT, Brasília - DF</p>
     </button>
   </div>
   <div class="middle-section">
     <span class="clock-icon">
       <fa-icon [icon]="faClock"></fa-icon>
     </span>
-    <span class="text">Texto do meio</span>
+    <span class="clock-text">Próxima entrega:</span>
   </div>
   <div class="right-section">
-    <span class="text">Texto da direita</span>
+    <span class="right-text">{{ formattedTomorrow.charAt(0).toUpperCase() + formattedTomorrow.slice(1) }}</span>
+
   </div>
 </div>
 <div class="header">
@@ -51,7 +53,7 @@
             </fa-icon>
           </button>
           <h1 class="modal-title">Meu carrinho</h1>
-          <button class="clear-modal" >Limpar</button>
+          <button class="clear-modal" >x</button>
         </div>
         <app-cart-page></app-cart-page>
       </div>
