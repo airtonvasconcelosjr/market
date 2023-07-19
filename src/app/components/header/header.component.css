@@ -147,11 +147,11 @@ body {
   display: flex;
   align-items: center;
   font-size: 12px;
+  padding: 5px 10px;
 }
 
 .icon-item:hover {
   background-color: rgb(200, 200, 200);
-  padding: 5px 10px;
   border-radius: 5px;
 }
 
@@ -212,22 +212,31 @@ a {
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid rgb(225, 225, 225);
-  background-color: rgb(242, 242, 242);
+  background-color: rgb(250, 250, 250);
 }
 
 .close-modal {
   z-index: 5;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  background-color: rgb(250, 250, 250);
 }
 
 .clear-modal {
   outline: none;
   border: none;
-  color: rgb(242, 242, 242);
+  padding: 1px;
+  margin-right: 5px;
+  background-color: transparent;
+  padding: 5px 10px;
 }
 
-.close-modal:hover,
-.clear-modal:hover {
+.close-modal:hover{
   cursor: pointer;
+  transform: scale(1.1);
+  background-color: rgb(245, 245, 245); 
+  
 }
 
 .header-cart-icon {
@@ -325,7 +334,7 @@ a {
     top: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
+    width: 450px;
   }
 
  
