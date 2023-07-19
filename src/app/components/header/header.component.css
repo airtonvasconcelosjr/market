@@ -285,13 +285,17 @@ a {
 
 @media (max-width: 768px) {
   .header {
-    width: 100%;
+    width: 95%;
     margin: 0;
   }
   .top-bar {
     display: flex;
     margin: 0;
     width: 100%;
+  }
+
+  .header-cart-button{
+    margin-right: 0;
   }
   .search-input{
     display: none;
