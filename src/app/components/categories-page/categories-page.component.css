@@ -4,11 +4,11 @@
     justify-content: space-between;
     background-color: #fcfcfc;
     padding: 1rem;
-    width: 100vw; /* Defina a largura total da tela */
+    width: 100vw; 
   }
   
   .category-card {
-    width: 23%; /* Ajuste o tamanho do card conforme necessário */
+    width: 23%; 
     margin-bottom: 1rem;
     background-color: white;
     padding: 1rem;

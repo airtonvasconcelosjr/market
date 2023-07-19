@@ -1,23 +1,18 @@
 
-<!-- Banner-->
-<!-- Carrossel para telas mobile -->
 <div  *ngIf="banners && banners.length > 0" class="carousel-wrapper-mobile">
   <ngx-slick-carousel class="banner-carousel-mobile" #slickModal="slick-carousel" [config]="mobileSlideConfig">
     <div ngxSlickItem *ngFor="let banner of banners">
       <div *ngIf="banner.is_mobile">
-        <!-- Conteúdo do carrossel para telas mobile -->
         <img [src]="'https://assets.instabuy.com.br/ib.store.banner/bnr-' + banner.image" alt="{{ banner.title }}">
       </div>
     </div>
   </ngx-slick-carousel>
 </div>
 
-<!-- Carrossel para telas desktop -->
 <div class="carousel-wrapper-desktop" *ngIf="banners && banners.length > 0">
   <ngx-slick-carousel class="banner-carousel-desktop" #slickModal="slick-carousel" [config]="desktopSlideConfig">
     <div ngxSlickItem *ngFor="let banner of banners">
       <div *ngIf="banner.is_desktop">
-        <!-- Conteúdo do carrossel para telas desktop -->
         <img [src]="'https://assets.instabuy.com.br/ib.store.banner/bnr-' + banner.image" alt="{{ banner.title }}">
       </div>
     </div>
@@ -40,7 +35,6 @@
             <fa-icon [icon]="faAngleRight" class="see-icon"></fa-icon>
           </h3>
         </div>
-      
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let produto of promo" class="slide card-item">
           <div class="product-container">
@@ -73,7 +67,6 @@
       </div>
     </div>
   </div>
-
   <div>
     <div *ngFor="let categoria of categoriasExibidas" class="categoria-card">
       <div class="card">
@@ -97,7 +90,6 @@
             </a>
           </div>
         </ngx-slick-carousel>
-        
         <div class="carousel-buttons">
           <button 
             class="carousel-button prev-button" 
@@ -115,14 +107,12 @@
         </div>
       </div>
     </div>
-  
     <div class="Load" *ngIf="categoriasExibidas < categorias">
       <button class="load-btn" (click)="carregarMaisCategorias()">
         <fa-icon [icon]="faPlus"></fa-icon>
         Carregar mais
       </button>
     </div>
-    
   </div>
   <a href="https://api.whatsapp.com/send?phone=5561992084411" target="_blank">
     <img src="../../../assets/images/WhatsApp-Logo.png" class="whatsapp-icon" alt="WhatsApp">

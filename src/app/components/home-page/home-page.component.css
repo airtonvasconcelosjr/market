@@ -120,7 +120,7 @@ a{
   margin-top: 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* Define o limite de 2 linhas */
+  -webkit-line-clamp: 3; 
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -139,7 +139,6 @@ a{
   margin-bottom: 0.2rem;
   margin-top: 0.8rem;
 }
-
 
 .product-nopromo {
   color: rgb(66, 66, 66);
@@ -233,8 +232,6 @@ a{
   transition: transform 0.3s ease-in-out;
 }
 
-
-
 .add-btn {
   position: absolute;
   top: 0;
@@ -259,11 +256,11 @@ a{
   .banner-carousel-mobile {
     display: block;
   }
+
   .banner-carousel-desktop {
     display: none;
   }
   
-
   .carousel-wrapper-mobile{
     display: block;
   }

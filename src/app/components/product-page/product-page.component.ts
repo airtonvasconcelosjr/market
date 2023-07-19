@@ -54,7 +54,6 @@ ngOnInit(): void {
     this.categorias = response.data.collection_items;
     if (this.slug) {
       const categoria = this.findCategoriaBySlug(this.slug);
-
       if (categoria) {
         this.categoriaTitle = categoria.title;
       }
@@ -78,8 +77,6 @@ ngOnInit(): void {
             quantidade: 1,
             valorTotal: 0, 
           };
-          
-         console.log( productData.brand)
         },
         (error: any) => {
         }
@@ -94,7 +91,6 @@ incrementInput() {
   }
 }
 
-
 resetInput() {
   const inputElement = document.querySelector('.quantity-input') as HTMLInputElement;
   if (inputElement) {
@@ -105,8 +101,6 @@ resetInput() {
 adicionarProdutoAoCarrinho(produto: any) {
   this.carrinhoService.adicionarProduto(produto);
 }
-
-
 
   slideConfig = {
     slidesToShow: 1,

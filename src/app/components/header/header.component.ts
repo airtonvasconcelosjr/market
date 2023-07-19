@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faSearch, faShoppingCart, faUser, faList, faClock, faLocation, faHome, faListAlt, faFire, faAngleDown, faTimes, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { CarrinhoComprasService } from '../../carrinho-compras-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -23,8 +24,12 @@ export class HeaderComponent implements OnInit {
   faAngleLeft = faAngleLeft;
   formattedToday!: string;
   formattedTomorrow!: string;
+  termoPesquisa: string = '';
 
-  constructor(private carrinhoService: CarrinhoComprasService) { }
+  constructor(
+      private carrinhoService: CarrinhoComprasService,
+      private router: Router
+    ) { }
 
   alternarCarrinho() {
     this.carrinhoService.alternarCarrinho();
@@ -50,6 +55,7 @@ export class HeaderComponent implements OnInit {
     };
     return date.toLocaleDateString('pt-BR', options);
   }
+
 
   ngOnInit() {
     window.addEventListener('scroll', () => {
