@@ -195,8 +195,8 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 20px;
   }
   .add-to-cart-button{
-    margin-left: 2rem;
-    padding: 10px 30px ;
+    margin-left: 1rem;
+    padding: 10px ;
   }
 
   .details-card{
@@ -207,6 +207,6 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-top: 2rem;
   }
   .quantity-input {
-    width: 40px;
+    width: 30px;
   }
 }
