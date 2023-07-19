@@ -43,6 +43,7 @@
     .footer-section, .social-media, .payment {
       flex-basis: 50%;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     .footer-container {

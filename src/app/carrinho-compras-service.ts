@@ -8,7 +8,13 @@ export class CarrinhoComprasService {
   carrinhoAberto = false;
 
   adicionarProduto(produto: any) {
-    this.produtos.push(produto);
+    const produtoExistente = this.produtos.find(p => p.id === produto.id);
+    if (produtoExistente) {
+      produtoExistente.quantidade++;
+    } else {
+      produto.quantidade = 1;
+      this.produtos.push(produto);
+    }
     console.log('Produto adicionado:', produto);
   }
 

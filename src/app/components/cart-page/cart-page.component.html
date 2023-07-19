@@ -10,7 +10,7 @@
       <div class="produto-quantidade">
         <input class="qtd" type="number" [(ngModel)]="produto.quantidade" (input)="atualizarValor(produto)" min="1" step="1">
       </div>
-      <p>R$ {{ produto.promoprice.toFixed(2) }}</p>
+      <p>R$ {{ calcularValorTotal(produto).toFixed(2) }}</p>
     </div>
   </div>
   <button class="finalizar-compra">

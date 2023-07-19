@@ -17,41 +17,52 @@ export class CartPageComponent implements OnInit {
     console.log('Produtos no carrinho:', this.produtos);
     this.produtos.forEach(produto => {
       produto.quantidade = 1;
-      this.atualizarValor(produto); 
-      this.atualizarTotal();
+      this.atualizarValor(produto);
     });
+
+    this.calcularTotalGeral();
   }
-  
 
   get carrinhoAberto() {
     return this.carrinhoService.carrinhoAberto;
   }
-  
+
   alternarCarrinho() {
     this.carrinhoService.alternarCarrinho();
-  }
-
-  atualizarTotal(): void {
-    this.total = this.produtos.reduce((acc, produto) => {
-      return acc + (produto.min_price_valid * produto.quantidade);
-    }, 0);
   }
 
   atualizarValor(produto: any): void {
     if (!produto.quantidade || isNaN(produto.quantidade) || produto.quantidade < 1) {
       produto.quantidade = 1;
     }
-    produto.valorTotal = (produto.min_price_valid * produto.quantidade).toFixed(2);
-    this.atualizarTotal();
+    produto.valorTotal = (produto.promoprice * produto.quantidade).toFixed(2);
+    this.calcularTotalGeral();
   }
 
   limparCarrinho() {
-   
+    this.produtos = [];
     this.carrinhoService.limparCarrinho();
-    this.produtos = []; 
+    this.calcularTotalGeral();
   }
 
   calcularValorTotal(produto: any): number {
-    return produto.price * produto.quantidade;
+    return produto.promoprice * produto.quantidade;
+  }
+
+  calcularTotalGeral(): void {
+    this.total = this.produtos.reduce((acc, produto) => {
+      return acc + this.calcularValorTotal(produto);
+    }, 0);
+  }
+
+  adicionarAoCarrinho() {
+    const inputElement = document.querySelector('.quantity-input') as HTMLInputElement;
+    if (inputElement) {
+      const quantidade = parseInt(inputElement.value);
+      for (let i = 0; i < quantidade; i++) {
+        this.carrinhoService.adicionarProduto(this.produtos[0]); // Exemplo: Adiciona o primeiro produto do array
+      }
+      this.calcularTotalGeral();
+    }
   }
 }

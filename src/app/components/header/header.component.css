@@ -317,12 +317,16 @@ a {
     margin: 0;
   }
 
-  
-.carrinho-modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 350px;
-}
+  .modal-title{
+    margin-right: 2rem;
+  }
+  .carrinho-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+ 
 }
