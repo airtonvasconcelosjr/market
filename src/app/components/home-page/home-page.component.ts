@@ -48,8 +48,6 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
    
     this.apiService.getLayout().subscribe((response: ApiResponse) => {
-      console.log(response);
-      
       this.banners = response.data.banners;
       this.categorias = response.data.collection_items;
       this.categoriasExibidas = this.categorias.slice(0, this.quantidadeCategoriasExibidas);
@@ -59,15 +57,12 @@ export class HomePageComponent implements OnInit {
         const promoprice = produto.min_price_valid;
         produto.promoprice = promoprice;
       });
-      
       this.categorias.forEach(categoria => {
         categoria.items.forEach(produto => {
           const price = produto.prices[0]?.price; 
           const promoprice = produto.min_price_valid;
           produto.promoprice = promoprice;
         });
-
-        
       });
     });
   }

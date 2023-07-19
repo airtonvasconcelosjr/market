@@ -19,16 +19,11 @@ export class CartPageComponent implements OnInit {
       produto.quantidade = 1;
       this.atualizarValor(produto);
     });
-
     this.calcularTotalGeral();
   }
 
   get carrinhoAberto() {
     return this.carrinhoService.carrinhoAberto;
-  }
-
-  alternarCarrinho() {
-    this.carrinhoService.alternarCarrinho();
   }
 
   atualizarValor(produto: any): void {

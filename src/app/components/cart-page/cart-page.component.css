@@ -1,6 +1,6 @@
 .produto {
   display: flex;
-  align-items: center; /* Alinha os itens verticalmente ao centro */
+  align-items: center;
   margin-bottom: 10px;
   border-bottom: 1px solid rgb(222, 222, 222);
 }
@@ -123,7 +123,6 @@ input[type="number"]::-webkit-outer-spin-button {
   cursor: pointer;
   background-color: rgb(245, 245, 245); 
   transform: scale(1.1);
-  
 }
 
 @media screen and (max-width: 768px) {
@@ -135,6 +134,7 @@ input[type="number"]::-webkit-outer-spin-button {
   .produto-name{
     width: 45%;
   }
+  
   .finalizar-compra {
     width: 100%;
     cursor: pointer;

@@ -13,25 +13,17 @@
   </div>
   <div class="right-section">
     <span class="right-text">{{ formattedTomorrow.charAt(0).toUpperCase() + formattedTomorrow.slice(1) }}</span>
-
   </div>
 </div>
 <div class="header">
-  <!-- Barra no topo da tela -->
   <div class="top-bar">
-    <!-- Logo e texto -->
     <div class="logo">
-      <!-- Coloque aqui o código para exibir sua logo -->
       <h3 class="logo-text">Supermercado Modelo</h3>
     </div>
-
-    <!-- Input de pesquisa -->
     <div class="search-bar">
       <fa-icon [icon]="searchIcon" class="search-icon"></fa-icon>
       <input type="text" placeholder="O que você procura?" class="search-input">
     </div>
-
-    <!-- Ícones -->
     <div class="icons">
       <fa-icon [icon]="faList" class="header-icon"></fa-icon>
       <h4 class="header-list-btn">Listas</h4>
@@ -44,7 +36,6 @@
         <span class="cart-text">Carrinho</span>
         <span class="cart-item-count">{{ getCarrinhoItemCount() }}</span>
       </button>
-      
       <div class="carrinho-modal" *ngIf="exibirCarrinho">
         <div class="modal-header">
           <button class="close-modal" (click)="fecharCarrinho()">
@@ -59,7 +50,6 @@
       </div>
     </div>
   </div>
-  
 </div>
 <div class="additional-icons">
   <div class="additional-icons-inner">
