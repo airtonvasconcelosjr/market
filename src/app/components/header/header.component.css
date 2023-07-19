@@ -171,6 +171,7 @@ a {
 
 .header-icon {
   margin-right: 10px;
+  margin-left: 10px;
 }
 
 .header-list-btn {
@@ -178,7 +179,10 @@ a {
 }
 
 .header-account-btn {
+  display: flex;
+  align-items: center;
   margin-right: 1rem;
+  white-space: nowrap; 
 }
 
 .header-cart-button{
@@ -198,7 +202,7 @@ a {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 400px;
+  width: 500px;
   height: 100vh;
   background-color: white;
   z-index: 9999;
@@ -296,7 +300,8 @@ a {
   .top-bar {
     display: flex;
     margin: 0;
-    width: 100%;
+    width: 95%;
+    margin-right: 3rem;
   }
 
   .header-cart-button{
@@ -350,7 +355,7 @@ a {
     top: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
+    width: 400px;
   }
 
   .modal-title{
