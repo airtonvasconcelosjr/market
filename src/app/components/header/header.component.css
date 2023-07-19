@@ -306,10 +306,9 @@ a {
     margin-right: 1rem; /* Ajuste a margem conforme necessário */
   }
   .additional-icons-inner{
-    flex-wrap: wrap;
     display: flex;
-    justify-content: space-between;
     width: 100%;
+    text-align: center;
   }
   .icon-item:last-child,
   .icon-item:nth-last-child(2) {
