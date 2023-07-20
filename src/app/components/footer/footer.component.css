@@ -5,7 +5,7 @@
   }
   
   .footer-section {
-    flex-basis: 25%;
+    flex-basis: 20%;
     line-height: 28px;
   }
   
@@ -19,9 +19,24 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
+  .image-container {
+    display: flex;
+    flex: 1; 
+    justify-content: space-between; 
+    max-width: 100px; 
+    height: auto;
+  }
   
-  .social-media, .payment {
-    flex-basis: 50%;
+  .image-container img {
+    max-width: 60px; 
+    height: 30px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+  }
+
+  .social-link:hover{
+    transform: scale(1.2);
   }
 
   .divisor{
@@ -39,12 +54,15 @@
       flex-wrap: wrap;
     }
     
-    .footer-section, .social-media, .payment {
+    .footer-section, .social-media {
       flex-basis: 50%;
       margin-bottom: 20px;
       text-align: center;
     }
-
+    .image-container{
+      margin: 0 4.5rem;
+    }
+    
     .footer-container {
       margin: 0 2.5rem;
     }

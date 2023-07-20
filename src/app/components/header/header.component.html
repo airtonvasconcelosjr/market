@@ -18,6 +18,7 @@
 <div class="header">
   <div class="top-bar">
     <div class="logo">
+      <img src="../../../assets/images/logo.png" alt="logo">
       <h3 class="logo-text">Supermercado Modelo</h3>
     </div>
     <div class="search-bar">
@@ -65,7 +66,7 @@
       <fa-icon [icon]="faListAlt" class="additional-icon"></fa-icon>
       <span class="icon-text">Ofertas</span>
     </a>
-    <a href="pagina4.html" class="icon-item">
+    <a [routerLink]="['/product', 'Kit-Churrasco']" class="icon-item">
       <fa-icon [icon]="faFire" class="additional-icon"></fa-icon>
       <span class="icon-text">KIT CHURRASCO</span>
     </a>
