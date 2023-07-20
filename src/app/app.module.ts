@@ -15,6 +15,7 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { CategoriesPageComponent } from './components/categories-page/categories-page.component';
 import { CartPageComponent } from './components/cart-page/cart-page.component';
 import { FormsModule } from '@angular/forms';
+import { BlogPageComponent } from './components/blog-page/blog-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     HomePageComponent,
     ProductPageComponent,
     CategoriesPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    BlogPageComponent
   ],
   imports: [
     BrowserModule,
