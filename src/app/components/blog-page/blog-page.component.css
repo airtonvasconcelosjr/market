@@ -94,6 +94,10 @@
     .blog-post-card {
       width: 100%;
     }
+    
+    .blog-card {
+      margin: 0 1rem;
+    }
   }
   
   
