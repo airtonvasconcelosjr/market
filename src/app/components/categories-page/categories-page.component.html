@@ -1,16 +1,15 @@
 <h1>Todas as Categorias</h1>
 <div class="category-container">
   <div *ngFor="let categoria of categorias" class="category-card">
-    <h2>{{ categoria.title }}</h2> <!-- Imprime o título da categoria -->
+    <h2>{{ categoria.title }}</h2> 
     <div *ngFor="let produto of categoria.items; let i = index">
-      <div *ngIf="categoria.showProducts || i < 2"> <!-- Mostra apenas os 2 primeiros itens ou todos se showAll for verdadeiro -->
+      <div *ngIf="categoria.showProducts || i < 2"> 
         <a [routerLink]="['/product', produto.slug]">
         <p>{{ produto.name }}</p>
-        </a> <!-- Imprime o nome do produto -->
-        <!-- Outras informações do produto, como preço, imagem, etc. -->
+        </a>
       </div>
     </div>
-    <div class="ver-tudo"> <!-- Corrige a classe da div -->
+    <div class="ver-tudo">
       <button (click)="toggleProducts(categoria)">
         {{ categoria.showProducts ? 'Ver menos' : 'Ver tudo' }}
         <fa-icon [icon]="faAngleRight"></fa-icon>

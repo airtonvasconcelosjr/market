@@ -69,7 +69,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 4rem;
 }
 
 .logo {
@@ -98,7 +97,7 @@ body {
   margin-right: 1rem;
   padding: 5px;
   border-radius: 5px;
-  width: 40vw;
+  width: 30vw;
   min-width: 10vw;
   outline: none;
   border: none;
@@ -257,6 +256,12 @@ a {
 @media (max-width: 1354px) {
   .additional-icons-inner a:not(:nth-child(-n+4)) {
     display: none;
+  }
+  .search-input {
+    width: 20vw;
+  }
+  .logo-text {
+    max-width: 130px;
   }
 }
 

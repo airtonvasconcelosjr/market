@@ -54,9 +54,8 @@ export class OfertaPageComponent implements OnInit {
         const price = produto.prices[0]?.price;
         const promoprice = produto.min_price_valid;
         produto.promoprice = promoprice;
+        
       });
-     
-      console.log( this.promo );
     });
   }
 

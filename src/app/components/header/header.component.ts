@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faSearch, faShoppingCart, faUser, faList, faClock, faLocation, faHome, faListAlt, faFire, faAngleDown, faTimes, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faShoppingCart, faUser, faList, faClock, faLocation, faHome, faListAlt, faFire, faAngleDown, faTimes, faAngleLeft, faTags, faDrumstickBite, faCheese } from '@fortawesome/free-solid-svg-icons';
 import { CarrinhoComprasService } from '../../carrinho-compras-service';
 import { Router } from '@angular/router';
 
@@ -22,6 +22,9 @@ export class HeaderComponent implements OnInit {
   faTimes = faTimes;
   exibirCarrinho = false;
   faAngleLeft = faAngleLeft;
+  faTags = faTags;
+  faDrumstickBite = faDrumstickBite ;
+  faCheese = faCheese;
   formattedToday!: string;
   formattedTomorrow!: string;
   termoPesquisa: string = '';

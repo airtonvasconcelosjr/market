@@ -17,6 +17,8 @@ import { CartPageComponent } from './components/cart-page/cart-page.component';
 import { FormsModule } from '@angular/forms';
 import { BlogPageComponent } from './components/blog-page/blog-page.component';
 import { OfertaPageComponent } from './components/oferta-page/oferta-page.component';
+import { AcouguePageComponent } from './components/acougue-page/acougue-page.component';
+import { FriosPageComponent } from './components/frios-page/frios-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { OfertaPageComponent } from './components/oferta-page/oferta-page.compon
     CategoriesPageComponent,
     CartPageComponent,
     BlogPageComponent,
-    OfertaPageComponent
+    OfertaPageComponent,
+    AcouguePageComponent,
+    FriosPageComponent
   ],
   imports: [
     BrowserModule,
