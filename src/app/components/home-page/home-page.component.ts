@@ -24,7 +24,6 @@ export class HomePageComponent implements OnInit {
   faAngleLeft = faAngleLeft;
   faPlus = faPlus;
   faNewspaper = faNewspaper;
-  
 
 
   constructor(
@@ -47,7 +46,6 @@ export class HomePageComponent implements OnInit {
         produto.promoprice = promoprice;
       
       });
-      console.log(this.categorias);
       this.categorias.forEach(categoria => {
         categoria.items.forEach(produto => {
           const price = produto.prices[0]?.price; 

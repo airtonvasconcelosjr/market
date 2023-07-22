@@ -14,7 +14,6 @@ export class CartPageComponent implements OnInit {
 
   ngOnInit() {
     this.produtos = this.carrinhoService.getProdutos();
-    console.log('Produtos no carrinho:', this.produtos);
     this.produtos.forEach(produto => {
       produto.quantidade = 1;
       this.atualizarValor(produto);
@@ -55,7 +54,7 @@ export class CartPageComponent implements OnInit {
     if (inputElement) {
       const quantidade = parseInt(inputElement.value);
       for (let i = 0; i < quantidade; i++) {
-        this.carrinhoService.adicionarProduto(this.produtos[0]); // Exemplo: Adiciona o primeiro produto do array
+        this.carrinhoService.adicionarProduto(this.produtos[0]); 
       }
       this.calcularTotalGeral();
     }

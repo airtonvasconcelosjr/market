@@ -76,7 +76,7 @@ export class HeaderComponent implements OnInit {
     const tomorrow = new Date();
     tomorrow.setDate(today.getDate() + 1);
     
-    this.formattedToday = this.getFormattedDate(today); // Data atual formatada
-    this.formattedTomorrow = this.getFormattedDate(tomorrow); // Data do dia seguinte formatada
+    this.formattedToday = this.getFormattedDate(today); 
+    this.formattedTomorrow = this.getFormattedDate(tomorrow); 
   }
 }

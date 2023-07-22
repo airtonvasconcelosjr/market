@@ -29,7 +29,6 @@ export class AcouguePageComponent implements OnInit{
      
       this.apiService.getLayout().subscribe((response: ApiResponse) => {
         this.categorias = response.data.collection_items;
-        console.log(this.categorias[1]);
         this.categorias.forEach(categoria => {
           categoria.items.forEach(produto => {
             const price = produto.prices[0]?.price; 

@@ -85,3 +85,9 @@ export interface Banner {
     http_status: number;
   }
   
+  export interface Post {
+    image: string;
+    title: string;
+    text: string;
+  }
+  
