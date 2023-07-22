@@ -18,7 +18,9 @@
 <div class="header">
   <div class="top-bar">
     <div class="logo">
-      <img src="../../../assets/images/logo.png" alt="logo">
+      <a [routerLink]="['/home']">
+        <img src="../../../assets/images/logo.png" alt="logo">
+      </a>
       <h3 class="logo-text">Supermercado Modelo</h3>
     </div>
     <div class="search-bar">
@@ -58,11 +60,11 @@
       <fa-icon [icon]="faHome" class="additional-icon"></fa-icon>
       <span class="icon-text">Início</span>
     </a>
-    <a [routerLink]="['/categorias']">
+    <a [routerLink]="['/categorias']" class="icon-item">
       <fa-icon [icon]="faListAlt" class="additional-icon"></fa-icon>
       <span class="icon-text">Todas as Categorias</span>
     </a>
-    <a [routerLink]="['/ofertas']">
+    <a [routerLink]="['/ofertas']"  class="icon-item">
       <fa-icon [icon]="faTags" class="additional-icon"></fa-icon>
       <span class="icon-text">Todas as ofertas</span>
     </a>
