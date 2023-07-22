@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
+import { Post } from 'src/app/shared/models';
 import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 
-interface Post {
-  image: string;
-  title: string;
-  text: string;
-}
 
 @Component({
   selector: 'app-blog-page',
@@ -31,6 +27,4 @@ export class BlogPageComponent {
       text: 'A higienização dos alimentos é sempre importante, mas neste momento de pandemia tornou-se mais necessária. Além de lavar muito bem as mãos, infectologistas recomendam lavar todas as frutas e hortaliças antes mesmo de serem armazenadas na geladeira. '
     }
   ];
-  
-
 }

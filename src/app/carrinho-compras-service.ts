@@ -15,7 +15,6 @@ export class CarrinhoComprasService {
       produto.quantidade = 1;
       this.produtos.push(produto);
     }
-    console.log('Produto adicionado:', produto);
   }
 
   getProdutos(): any[] {

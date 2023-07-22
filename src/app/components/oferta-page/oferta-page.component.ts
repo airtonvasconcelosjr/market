@@ -1,26 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
-import { Banner, Produto, Categoria, Promo } from '../../shared/models';
+import { Produto, Categoria, Promo, ApiResponse } from '../../shared/models';
 import { faBolt, faAngleRight, faAngleLeft, faPlus, faNewspaper } from '@fortawesome/free-solid-svg-icons';
-import { Router } from '@angular/router';
 import { CarrinhoComprasService } from '../../carrinho-compras-service';
 
-interface Post {
-  image: string;
-  title: string;
-  text: string;
-}
-
-interface ApiResponse {
-  status: string;
-  count: number;
-  data: {
-    banners: Banner[];
-    collection_items: Categoria[];
-    promo: Promo[]; // Use the new PromoItem interface
-  };
-  http_status: number;
-}
 
 
 @Component({
@@ -29,11 +12,8 @@ interface ApiResponse {
   styleUrls: ['./oferta-page.component.css']
 })
 export class OfertaPageComponent implements OnInit {
-  banners!: Banner[];
   categorias!: Categoria[];
-  categoriasExibidas: Categoria[] = [];
-  quantidadeCategoriasExibidas = 5;
-  promo!: Promo[]; // Use the new PromoItem interface
+  promo!: Promo[]; 
   produtos: Produto[] = [];
   boltIcon = faBolt;
   faAngleRight = faAngleRight;
@@ -43,7 +23,6 @@ export class OfertaPageComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private router: Router,
     private carrinhoService: CarrinhoComprasService
   ) {}
 

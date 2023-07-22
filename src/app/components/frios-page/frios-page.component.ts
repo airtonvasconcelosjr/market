@@ -11,9 +11,6 @@ import { CarrinhoComprasService } from '../../carrinho-compras-service';
   styleUrls: ['./frios-page.component.css']
 })
 export class FriosPageComponent implements OnInit{
-
-
-
     categorias!: Categoria[];
     produtos!: Produto[];
     promo!: Promo[];
@@ -31,7 +28,6 @@ export class FriosPageComponent implements OnInit{
      
       this.apiService.getLayout().subscribe((response: ApiResponse) => {
         this.categorias = response.data.collection_items;
-        console.log(this.categorias[2]);
         this.categorias.forEach(categoria => {
           categoria.items.forEach(produto => {
             const price = produto.prices[0]?.price; 

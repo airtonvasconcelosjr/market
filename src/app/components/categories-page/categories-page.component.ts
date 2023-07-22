@@ -1,17 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service'; 
-import { Categoria, Promo } from 'src/app/shared/models';
+import { Categoria, Promo, ApiResponse } from 'src/app/shared/models';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
-interface ApiResponse {
-  status: string;
-  count: number;
-  data: {
-    collection_items: Categoria[];
-    promo: Promo[];
-  };
-  http_status: number;
-}
+
 
 @Component({
   selector: 'app-categories-page',
@@ -29,14 +21,11 @@ export class CategoriesPageComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getLayout().subscribe((response: ApiResponse) => {
       this.categorias = response.data.collection_items;
-      console.log(this.categorias);
       for (const categoria of this.categorias) {
         if (Array.isArray(categoria.produtos)) {
           for (const produto of categoria.produtos) {
-            console.log(produto.name);
           }
         } else {
-          console.log('Categoria sem produtos:', categoria);
         }
       }
     });
