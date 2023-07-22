@@ -1,0 +1,23 @@
+<body>
+    <div class="page-card">
+      <ng-container *ngIf="categorias.length >= 2">
+        <div class="produtos-container">
+          <div class="produto-card" *ngFor="let produto of categorias[1].items">
+            <div class="product-container">
+              <button class="add-btn" (click)="adicionarProdutoAoCarrinho(produto)">+</button>
+              <a [routerLink]="['/product', produto.slug]">
+                <img [src]="'https://assets.instabuy.com.br/ib.item.image.small/s-' + produto.images[0]"
+                  alt="Produto">
+                <div class="product-prices">
+                  <p class="product-price">R$ {{ produto.promoprice.toFixed(2) }}</p>
+                  <p class="product-nopromo">R$ {{ produto.prices[0].price.toFixed(2) }}</p>
+                </div>
+                <h3 class="product-name">{{ produto.name }}</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </body>
+  

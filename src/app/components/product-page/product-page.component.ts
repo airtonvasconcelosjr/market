@@ -1,21 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../api.service';
-import { Banner, Categoria, Promo } from '../../shared/models';
+import { Banner, Categoria, Promo, ApiResponse } from '../../shared/models';
 import { faTrash, faAngleLeft, faAngleRight, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { CarrinhoComprasService } from '../../carrinho-compras-service';
 
-
-interface ApiResponse {
-  status: string;
-  count: number;
-  data: {
-    banners: Banner[];
-    collection_items: Categoria[];
-    promo: Promo[];
-  };
-  http_status: number;
-}
 
 @Component({
   selector: 'app-product-page',

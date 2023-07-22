@@ -74,4 +74,14 @@ export interface Banner {
     // Outras propriedades da categoria, se houver
   }
 
+  export interface ApiResponse {
+    status: string;
+    count: number;
+    data: {
+      banners: Banner[];
+      collection_items: Categoria[];
+      promo: Promo[];
+    };
+    http_status: number;
+  }
   
