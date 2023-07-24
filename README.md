@@ -2,6 +2,10 @@
 
 > Este app foi criado com intuito de praticar habilidades de desenvolvimento front-end utilizando React como linguagem principal
 
+## Deploy
+
+https://market-phi-two.vercel.app/
+
 ## Capturas de Tela
 
 ![Captura de Tela 1]![image](https://github.com/airtonvasconcelosjr/market/assets/101413097/9f13deae-01fe-46b8-b393-08916aa903e5)
