@@ -1,5 +1,5 @@
-
-<div  *ngIf="banners && banners.length > 0" class="carousel-wrapper-mobile">
+<!-- Banners casousel mobile-->
+  <div *ngIf="banners && banners.length > 0" class="carousel-wrapper-mobile">
   <ngx-slick-carousel class="banner-carousel-mobile" #slickModal="slick-carousel" [config]="mobileSlideConfig">
     <div ngxSlickItem *ngFor="let banner of banners">
       <div *ngIf="banner.is_mobile">
@@ -9,6 +9,7 @@
   </ngx-slick-carousel>
 </div>
 
+<!-- Banners casousel desktop-->
 <div class="carousel-wrapper-desktop" *ngIf="banners && banners.length > 0">
   <ngx-slick-carousel class="banner-carousel-desktop" #slickModal="slick-carousel" [config]="desktopSlideConfig">
     <div ngxSlickItem *ngFor="let banner of banners">
@@ -19,6 +20,7 @@
   </ngx-slick-carousel>
 </div>
 
+<!-- Offer casousel-->
 <html>
   <body>
     <div class="carousel-wrapper">
@@ -67,6 +69,8 @@
       </div>
     </div>
   </div>
+
+  <!-- Products casousel desktop-->
   <div>
     <div *ngFor="let categoria of categoriasExibidas" class="categoria-card">
       <div class="card">
@@ -107,6 +111,7 @@
         </div>
       </div>
     </div>
+    <!-- Load more button-->
     <div class="Load" *ngIf="categoriasExibidas < categorias">
       <button class="load-btn" (click)="carregarMaisCategorias()">
         <fa-icon [icon]="faPlus"></fa-icon>
@@ -114,10 +119,13 @@
       </button>
     </div>
   </div>
+
+  <!-- Blog section -->
     <app-blog-page></app-blog-page>
   <div class="footer-container">
   </div>
-  
+
+  <!-- Whatsapp icon -->
   <a href="https://api.whatsapp.com/send?phone=5561992084411" target="_blank">
     <img src="../../../assets/images/WhatsApp-Logo.png" class="whatsapp-icon" alt="WhatsApp">
   </a>
