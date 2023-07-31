@@ -59,7 +59,7 @@ export class HeaderComponent implements OnInit {
     return date.toLocaleDateString('pt-BR', options);
   }
 
-
+  //to set 'fixed' class to header
   ngOnInit() {
     window.addEventListener('scroll', () => {
       var header = document.querySelector('.header');
@@ -72,6 +72,8 @@ export class HeaderComponent implements OnInit {
       }
     });
 
+
+    //To set date on header
     const today = new Date();
     const tomorrow = new Date();
     tomorrow.setDate(today.getDate() + 1);

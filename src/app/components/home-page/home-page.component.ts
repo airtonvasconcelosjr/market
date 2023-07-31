@@ -64,7 +64,7 @@ export class HomePageComponent implements OnInit {
     this.carrinhoService.adicionarProduto(produto);
   }
   
-
+//corousel configs
   slideConfig = {
     slidesToShow: 5.5,
     slidesToScroll: 1,
@@ -119,6 +119,7 @@ export class HomePageComponent implements OnInit {
     initialSlide: 1,
   };
 
+  //load more categories button function
   carregarMaisCategorias() {
     this.quantidadeCategoriasExibidas += 5; 
     this.categoriasExibidas = this.categorias.slice(0, this.quantidadeCategoriasExibidas);
